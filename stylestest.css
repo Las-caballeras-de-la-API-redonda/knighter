@@ -1,0 +1,75 @@
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+      }
+      
+      .logo {
+        height: 40px;
+        width: auto;
+        margin-right: 20px;
+      }
+      
+      .search-bar {
+        flex: 1;
+        margin-right: 20px;
+      }
+      
+      .profile-button {
+        height: 40px;
+        width: 40px;
+        background-color: #ccc;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .footer-logo {
+        height: 40px;
+        width: auto;
+      }
+      
+      main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: calc(100vh - 120px);
+      }
+      
+      .side-column {
+        flex: 1;
+        height: 100%;
+        background-color: #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .center-column {
+        flex: 2;
+        height: 100%;
+        background-color: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
