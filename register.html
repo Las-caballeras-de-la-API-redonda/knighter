@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Knighter</title>
+</head>
+
+<body>
+    <div>
+        <h2>Knigther</h2>
+    </div>
+    <div class="new-account-container">
+        <h3>Create your account! </h3>
+        <form id="form">
+            <div class="form-control">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required placeholder="Username..." />
+                <!-- formatcontrol= solo letras mayus y minus    databasecontrol = username no existe -->
+            </div>
+            <div class="form-control">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" required placeholder="Email address..." />
+                  <!-- formatcontrol= letras@letras.letras   databasecontrol = email no en uso -->
+            </div>
+            <div class="form-control">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Name..." />
+                <!-- formatcontrol= solo letras mayus y minus y espacios-->
+            </div>
+            <div class="form-control">
+                <label for="surname">Surname</label>
+                <input type="text" id="surname" name="surname" requiredplaceholder="Surname..." />
+                <!-- formatcontrol= solo letras mayus y minus y espacios -->
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Password..." />
+            </div>
+            <button class="btn">Sign in</button>
+        </form>
+    </div>
+    <footer class="bottom">FOOTER
+
+        <br><br>
+    </footer>
+</body>
+
+</html>

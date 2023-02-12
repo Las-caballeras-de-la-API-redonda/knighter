@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Knighter</title>
+</head>
+  
+<body>   
+    <!-- NAVBAR  -->
+      <nav>
+        <div class="logo">
+          <img src="logo.png" alt="Logo" onclick="window.location.href='main.html'">
+        </div>
+        <form>
+          <input type="text" placeholder="Search">
+        </form>
+        <button id="login-btn" onclick="window.location.href='login.html'">Login</button>
+        <button id="settings-btn">Settings</button>
+      </nav>         
+    <!-- Publish new twitter (knighter) - Only if the user is loggin   -->
+      <div id="knighter-form">
+        <img src="/caballera404.png" alt="avatar">
+        <textarea id="knighter-input" placeholder="What's happening ?" name="texto"></textarea>
+        <br>
+        <button id="knighter-button">Knighther</button>
+      </div>
+    <!-- wall of most recent knighters published  -->
+      <div id="knightersWall">
+          <h2 id="titleWall">KNIGHTER WALL</h2>
+          <!-- KNIGHTERS FROM THE API AND NEWS -->
+          <div id="knighter-list"> 
+          </div>
+            <!-- EJEMPLO DE KNIGHTER(TWEET) -->
+          <div class="knighter-container">
+              <div class="knighter-header">
+                <img src="/caballera404.png" alt="avatar">
+                <h3>CABALLERA 404</h3>
+                <br>
+                <p>@caballeraFrustrada</p>
+                <!-- <p class="knighter-date">${dateString}</p> -->
+              </div>
+              <p class="knighter-text">knighter es la mejor aplicación del mundo!!!</p>
+              <div class="knighter-footer">
+                        <button class="honor-button" data-id="${knighterId}">Honor</button>
+                        <span class="honor-count">3</span>
+                        <button class="followButton">Follow</button>
+                      </div>
+                    
+          </div>
+      </div>
+    <!-- FOOTER  -->
+      <footer class="bottom">FOOTER
+                <br><br>
+      </footer>
+    
+      <script src="main.js"></script>
+    <div id="app"></div>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+/* TO PUBLISH A KNIGHTER (TWEET) */
+
+
+
+#knighter-form{
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e6ecf0;
+    border-radius: 10px;
+    display: flex;
+    margin:30px;
+}
+
+#knighter-form img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+
+#knighter-input { 
+    height: 50px;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    resize: none;
+    margin-right: 30px;
+    flex-grow: 1;
+}
+
+#knighter-button{
+    background-color: purple;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 20px;
+    font-size: 14pt;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+/* title wall*/
+
+#knightersWall{
+    background-color:teal;
+    background-size: cover;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+#titleWall {
+    text-align: center;
+    padding: 50px;
+    color: white;
+    
+    }
+
+
+/* KNIGHTERS PUBLISHED*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    display:flex;
+    justify-content: center;
+  }
+
+
+#knightersWall{
+    display: flex;
+    justify-content: center;
+    flex-direction: column
+
+}
+
+.knighter-container{
+    padding: 20px;
+    width: 50%;
+    background-color: #ffffff;
+    border: 1px solid #e6ecf0;
+    border-radius: 10px;
+    color: black;
+    margin:auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+}
+
+.knighter-header{
+    display: flex;
+    align-items: center;
+    
+    margin-bottom: 20px;
+
+}
+
+
+
+.knighter-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+
+
+
+
+.honor-button{
+    background-color: purple;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 20px;
+    font-size: 14pt;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+.followButton{
+    background-color: purple;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 20px;
+    font-size: 14pt;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* RESPONSIVE*/
+
+@media (max-width: 600px) {
+  .knighter-header img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 400px) {
+  .knighter-header img {
+    width: 30px;
+    height: 30px;
+  }
+}
