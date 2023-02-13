@@ -6,6 +6,7 @@ body {
 }
 
 nav {
+ 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -135,17 +136,19 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
+
   height: 60px;
-  background-color: #fff;
+  background-color: rgb(44, 0, 74);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .footer-logo {
   height: 40px;
   width: auto;
 }
+
 
 main {
   display: flex;

@@ -1,9 +1,4 @@
 
-
-
-// //<button id="settings-btn">Settings</button>  
-// {/* <script> const settingsBtn = document.getElementById("settings-btn");  if (!loggedIn) {   settingsBtn.style.display = "none"; } </script> */}
-
 const knighterForm = document.getElementById("knighter-form");
 const knighterButton = document.getElementById("knighter-button");
 const knighterInput = document.getElementById("knighter-input");
@@ -13,6 +8,7 @@ const honorButton = document.querySelector(".knighter-footer.honor-button")
 let newFollowButton = document.querySelector(".knighter-footer.followButton");
 let id = ""
 let u = "" 
+const searchInput = document.getElementById("search-input");
 
 
 const press = localStorage.getItem("press")
@@ -25,7 +21,6 @@ const press = localStorage.getItem("press")
 
 // variable to indicate if the user is logged in or not 
 let loggedIn = true 
-
 
 
 //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
@@ -46,8 +41,8 @@ fetch(url)
     postHTML += `
     <div class="knighter-container">
     <div class="knighter-header">
-    <img src="/caballera404.png" alt="avatar">
-    <h3>${i.usuario}</h3>
+    <img src="images/logosquare.PNG" alt="avatar">
+    <h3 class="knighter-name">${i.usuario}</h3>
     <br>
     <p class="knighter-date">${i.fecha}</p>
     </div>
@@ -62,12 +57,11 @@ fetch(url)
     }})
     
 
-    //PUBLISH A KNIGHTER
-    //adding an event to the button for publishing a knighter and conecting with the API
-    knighterButton.addEventListener("click", function(){
-      const usuario = "Gabriela"; //IMPORTANTE!!!!cambiar el usuario por el usuario logueado
-      
-      const knighter = knighterInput.value ;
+//PUBLISH A KNIGHTER
+//adding an event to the button for publishing a knighter and conecting with the API
+  knighterButton.addEventListener("click", function(){
+    const usuario = "Gabriela"; //IMPORTANTE!!!!cambiar el usuario por el usuario logueado
+    const knighter = knighterInput.value ;
       console.log(knighter)
       const url = 'http://127.0.0.1:3000/api/listadeposts?' + new URLSearchParams({usuario:usuario,texto:knighter,imagen:"img"});
   fetch(url, {
@@ -84,7 +78,8 @@ fetch(url)
   li.innerHTML = `
   <div class="knighter-container">
   <div class="knighter-header">
-  <h3>${usuario}</h3> //hay que poner el usuario
+  <img src="images/logosquare.PNG" alt="avatar">
+  <h3 class="knighter-name">${usuario}</h3> //hay que poner el usuario
   </div>
   <p class="knighter-text">${knighter}</p>
   <button class="honor-button" value = ${data["result"]}>Honor</button>
@@ -116,7 +111,7 @@ knighterList.addEventListener("click", function(event) {
         followButton.innerHTML = "Following!";
         followButton.disabled = false;
         // localStorage.setItem ("press",true);
-
+        //HAY QUE GUARDAR UNA VARIABLE DE A QUIEN PERTENECE EL POST 
         const url= 'http://127.0.0.1:3000/api/seguidores/empezaraseguir?' + new URLSearchParams({usuario:"benito",user_to_follow:'Gabriela'}) ;
         fetch(url, {
           method: 'POST',
@@ -162,3 +157,57 @@ knighterList.addEventListener("click", function(event) {
         console.error("Error connecting to the server");
         });
 }}})
+
+
+//SEARCHING TWEETS & PROFILES 
+//VERISÓN CON EL API- 
+// searchInput.addEventListener("keyup",function(event){
+//   const query= event.target.value; //el valor de la busqueda
+//   const url = `http://127.0.0.1:3000/api/listadeposts?usuario=${query}`
+//   fetch(url)
+//   .then(response => response.json())
+//     .then(data => {
+//     console.log(data)
+//     let resultsHTML = "";
+//     for (const result of data.lista) {
+//       resultsHTML += `
+//       <div class="knighter-container">
+//       <div class="knighter-header">
+//       <img src="images/logosquare.PNG" alt="avatar">
+//       <h3>${result.usuario}</h3>
+//       <br>
+//       <p class="knighter-date">${result.fecha}</p>
+//       </div>
+//       <p class="knighter-text">${result.texto}</p>
+//       <div class="knighter-footer">
+//       <button class="honor-button" value="${result._id}">Honor</button>
+//           <span class="honor-count">0</span>
+//           <button class="followButton">Follow</button>
+//         </div>
+//         </div>` 
+//       }
+//       searchResults.innerHTML = resultsHTML;
+//     })});
+
+
+//VERSIÓN CON JAVASCRIPT SIN API
+//Creamos función que muestre los knighters que contengan la palabra buscada
+function filterKnighters() {
+  let searchTerm = document.getElementById("search-input").value;
+  let knighters = document.getElementsByClassName("knighter-container");
+
+  for (let i = 0; i < knighters.length; i++) {
+    let knighter = knighters[i];
+    let knighterName = knighter.getElementsByClassName("knighter-name")[0].innerText;
+    let knighterText = knighter.getElementsByClassName("knighter-text")[0].innerText;
+    if (knighterText.toLowerCase().includes(searchTerm.toLowerCase()) || knighterName.toLowerCase().includes(searchTerm.toLowerCase())) {
+      knighter.style.display = "block";
+    } else {
+      knighter.style.display = "none";
+    }
+  }
+}
+
+searchInput.addEventListener("keyup", function() {
+  filterKnighters();
+});

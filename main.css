@@ -3,7 +3,8 @@
 
 
 #knighter-form{
-    padding: 20px;
+    width: 80%;
+    padding: 30px;
     background-color: #ffffff;
     border: 1px solid #e6ecf0;
     border-radius: 10px;
@@ -19,8 +20,8 @@
   }
 
 #knighter-input { 
-    height: 50px;
-    padding: 5px;
+    height: 60px;
+    padding: 10px;
     border: none;
     border-radius: 10px;
     font-size: 16px;
@@ -57,6 +58,11 @@
     text-align: center;
     padding: 50px;
     color: white;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 45px;
+    text-align: center;
+    text-shadow: 3px 3px #333;
     
     }
 
@@ -84,7 +90,7 @@ ul {
 
 .knighter-container{
     padding: 20px;
-    width: 50%;
+    width: 90%;
     background-color: #ffffff;
     border: 1px solid #e6ecf0;
     border-radius: 10px;
