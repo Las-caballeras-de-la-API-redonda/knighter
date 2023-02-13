@@ -9,43 +9,47 @@
 </head>
 
 <body>
+    <header>
+        <img class="logo" src="logo.png" alt="Logo">
+        <input class="search-bar" type="text" placeholder="Search...">
+        <div class="profile-button">P</div>
+      </header>
     <div>
         <h2>Knigther</h2>
     </div>
     <div class="new-account-container">
-        <h3>Create your account! </h3>
+        <div class="side-column">Left Column</div>
+        <div class="center-column"><h3>Create your account! </h3>
         <form id="form">
             <div class="form-control">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required placeholder="Username..." />
                 <!-- formatcontrol= solo letras mayus y minus    databasecontrol = username no existe -->
-            </div>
+            </div><br>
             <div class="form-control">
-                <label for="email">Email address</label>
-                <input type="email" id="email" name="email" required placeholder="Email address..." />
+                <label for="email">E-mail</label>
+                <input type="text" id="email" name="email" required placeholder="Email address..." />
                   <!-- formatcontrol= letras@letras.letras   databasecontrol = email no en uso -->
-            </div>
+            </div><br>
             <div class="form-control">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required placeholder="Name..." />
                 <!-- formatcontrol= solo letras mayus y minus y espacios-->
-            </div>
+            </div><br>
             <div class="form-control">
                 <label for="surname">Surname</label>
-                <input type="text" id="surname" name="surname" requiredplaceholder="Surname..." />
+                <input type="text" id="surname" name="surname" required placeholder="Surname..." />
                 <!-- formatcontrol= solo letras mayus y minus y espacios -->
-            </div>
+            </div><br>
             <div class="form-control">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required placeholder="Password..." />
-            </div>
+                <input type="text" id="password" name="password" required placeholder="Password..." />
+            </div><br>
             <button class="btn">Sign in</button>
-        </form>
+        </form></div>
+        <div class="side-column">Right Column</div>
     </div>
-    <footer class="bottom">FOOTER
-
-        <br><br>
+   <footer>
+      <img class="footer-logo" src="footer-logo.png"      alt="Footer Logo">
     </footer>
-</body>
-
-</html>
+  </body>

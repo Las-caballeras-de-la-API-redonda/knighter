@@ -23,7 +23,12 @@ form {
   flex-direction: column;
   font-family: 'Ubuntu', sans-serif;
 }
-
+label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  padding-right: 10px;
+}
 form input[type="text"] {
   padding: 0.5rem;
   font-size: 16px;
