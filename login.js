@@ -1,9 +1,10 @@
-const form = document.getElementById("login-form");
+
 const usernameInput = document.getElementById("username-input");
 const passwordInput = document.getElementById("password-input");
 const errorMessage = document.getElementById("error-message");
+const form = document.getElementById('submit');
 
-form.addEventListener("submit", event => {
+form.addEventListener("click", event => {
   event.preventDefault();
   
   const username = usernameInput.value;
@@ -23,17 +24,15 @@ function validatePassword(password) {
 
 const settingsBtn = document.getElementById("settings-btn");
 
-if (!loggedIn) {
-  settingsBtn.style.display = "none";
-}
-const form = document.getElementById('login-form');
-form.addEventListener('submit', (event) => {
+// if (!loggedIn) {
+//   settingsBtn.style.display = "none";
+// }
+
+form.addEventListener('click', (event) => {
   event.preventDefault();
-  
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
-  
-  fetch('http://localhost:3000/api/users', {
+    fetch('http://localhost:3000/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <script src="login.js"></script>
+    
     <nav>
         <div class="logo">
             <img src="images\logoname.PNG" alt="Logo">
@@ -28,11 +28,11 @@
         <div class="center-column">
             <h3>Log into your account</h3>
             <form id="login-form">
-                <label for="username">Username:</label>
+                <label id="username-input" for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <button type="submit">Submit</button>
+                <input type="password" id="password-input" name="password" required>
+                <button id="submit" type="submit">Submit</button>
               </form>
                 <h5> <a href="/register.html">Don't have an account yet? Sig in!</a></h5>
         </div>
@@ -41,6 +41,8 @@
 
         <br><br>
     </footer>
+    <script src="login.js"></script>
+    <div id="app"></div>
 </body>
 
 </html>

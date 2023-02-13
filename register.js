@@ -49,30 +49,31 @@ submitButton.addEventListener("click", function(event) {
      return;
    }
  
-   const form = document.getElementById('signup-form');
-   form.addEventListener('submit', (event) => {
-     event.preventDefault();
-     
+   const form = document.getElementById('submit');
+   form.addEventListener('click', (event) => {
+     event.preventDefault();    
      const username = document.getElementById('username').value;
-     const email = document.getElementById('email').value;
-     const name = document.getElementById('name').value;
-     const surname = document.getElementById('surname').value;
-     const password = document.getElementById('password').value;
-     
-     fetch('http://localhost:3000/api/users', {
+     const emailUser = document.getElementById('email').value;
+     const nameUser = document.getElementById('name').value;
+     const surnameUser = document.getElementById('surname').value;
+     const passwordUser = document.getElementById('password').value;
+    
+     fetch('http://localhost:3000/api/users?' + new URLSearchParams({alias:nameUser,name:emailUser,password:passwordUser}) ,{
        method: 'POST',
-       headers: {
-         'Content-Type': 'application/json'
-       },
-       body: JSON.stringify({ username, email, name, surname, password })
+       headers: {'Content-Type': 'application/json'},
+       body: JSON.stringify({
+        alias: nameUser,
+        name: emailUser,
+        password: passwordUser
+      })
+
      })
        .then(response => response.json())
        .then(data => {
-         // handle the API response
+         console.log(data)
        })
        .catch(error => {
          console.error(error);
        });
-   });
-   
- });
+   });})
+  

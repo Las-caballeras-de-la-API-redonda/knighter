@@ -20,7 +20,7 @@ const press = localStorage.getItem("press")
 
 
 // variable to indicate if the user is logged in or not 
-let loggedIn = true 
+let loggedIn = true //cambiar si es true o false 
 
 
 //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
@@ -42,7 +42,7 @@ fetch(url)
     <div class="knighter-container">
     <div class="knighter-header">
     <img src="images/logosquare.PNG" alt="avatar">
-    <h3 class="knighter-name">${i.usuario}</h3>
+    <a class="knighter-name" href="/userprofile.html">${i.usuario}</a>
     <br>
     <p class="knighter-date">${i.fecha}</p>
     </div>
@@ -79,7 +79,7 @@ fetch(url)
   <div class="knighter-container">
   <div class="knighter-header">
   <img src="images/logosquare.PNG" alt="avatar">
-  <h3 class="knighter-name">${usuario}</h3> //hay que poner el usuario
+  <a class="knighter-name" href="/userprofile.html">${usuario}</a> //hay que poner el usuario
   </div>
   <p class="knighter-text">${knighter}</p>
   <button class="honor-button" value = ${data["result"]}>Honor</button>
@@ -112,7 +112,7 @@ knighterList.addEventListener("click", function(event) {
         followButton.disabled = false;
         // localStorage.setItem ("press",true);
         //HAY QUE GUARDAR UNA VARIABLE DE A QUIEN PERTENECE EL POST 
-        const url= 'http://127.0.0.1:3000/api/seguidores/empezaraseguir?' + new URLSearchParams({usuario:"benito",user_to_follow:'Gabriela'}) ;
+        const url= 'http://127.0.0.1:3000/api/seguidores/empezaraseguir?' + new URLSearchParams({usuario:"pepita",user_to_follow:'Gabriela'}) ;
         fetch(url, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' 

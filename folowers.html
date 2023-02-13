@@ -1,0 +1,72 @@
+<head>
+  <style>
+    .header {
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+    th {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header" id="followersHeader">
+      <div>Followers</div>
+      <div>Following</div>
+    </div>
+    <table id="followersTable">
+      <tr>
+        <th>Username</th>
+        <th>Name</th>
+        <th>Location</th>
+      </tr>
+      <tr>
+        <td>@johndoe</td>
+        <td>John Doe</td>
+        <td>New York, NY</td>
+      </tr>
+      <tr>
+        <td>@janedoe</td>
+        <td>Jane Doe</td>
+        <td>San Francisco, CA</td>
+      </tr>
+    </table>
+    <table id="followingTable" style="display: none;">
+      <tr>
+        <th>Username</th>
+        <th>Name</th>
+        <th>Location</th>
+      </tr>
+      <tr>
+        <td>@johndoe</td>
+        <td>John Doe</td>
+        <td>New York, NY</td>
+      </tr>
+      <tr>
+        <td>@janedoe</td>
+        <td>Jane Doe</td>
+        <td>San Francisco, CA</td>
+      </tr>
+    </table>
+  </div>
+  <script>
+    document.getElementById("followersHeader").addEventListener("click", function() {
+      document.getElementById("followersTable").style.display = "block";
+      document.getElementById("followingTable").style.display = "none";
+    });
+    document.getElementById("followingHeader").addEventListener("click", function() {
+      document.getElementById("followersTable").style.display = "none";
+      document.getElementById("followingTable").style.display = "block";
+    });
+  </script>
+</body>
