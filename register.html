@@ -23,37 +23,25 @@
     </div>
     <div class="new-account-container">
         <div class="side-column"></div>
-        <div class="center-column"><h3>Create your account! </h3>
-        <form id="form">
-            <div class="form-control">
+        <div class="center-column">
+            <h3>Create your account! </h3>
+            <form id="signup-form">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required placeholder="Username..." />
-                <!-- formatcontrol= solo letras mayus y minus    databasecontrol = username no existe -->
-            </div><br>
-            <div class="form-control">
-                <label for="email">E-mail</label>
-                <input type="text" id="email" name="email" required placeholder="Email address..." />
-                  <!-- formatcontrol= letras@letras.letras   databasecontrol = email no en uso -->
-            </div><br>
-            <div class="form-control">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required placeholder="Name..." />
-                <!-- formatcontrol= solo letras mayus y minus y espacios-->
-            </div><br>
-            <div class="form-control">
-                <label for="surname">Surname</label>
-                <input type="text" id="surname" name="surname" required placeholder="Surname..." />
-                <!-- formatcontrol= solo letras mayus y minus y espacios -->
-            </div><br>
-            <div class="form-control">
-                <label for="password">Password</label>
-                <input type="text" id="password" name="password" required placeholder="Password..." />
-            </div><br>
-            <button class="btn">Sign in</button>
-        </form></div>
+                <input type="text" id="username" name="username" required placeholder="Username...">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Email address...">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Name...">
+                <label for="surname">Surname:</label>
+                <input type="text" id="surname" name="surname" required placeholder="Surname...">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required placeholder="Password...">
+                <button type="submit">Sign in</button>
+            </form>
+        </div>
         <div class="side-column"></div>
     </div>
-   <footer>
-      <img class="footer-logo" src="footer-logo.png"      alt="Footer Logo">
+    <footer>
+        <img class="footer-logo" src="images\teamlogo.PNG" alt="Footer Logo">
     </footer>
-  </body>
+</body>
