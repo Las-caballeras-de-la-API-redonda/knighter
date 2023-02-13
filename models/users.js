@@ -7,8 +7,10 @@ const mongoose = require('mongoose');
  */
 const usersSchema = mongoose.Schema({
     name: String,
-    alias: String,
-    password: String 
+    surname: String,
+    password: String,
+    username: String,
+    email: String
 });
 
 /**
