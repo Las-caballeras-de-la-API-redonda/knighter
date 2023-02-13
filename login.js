@@ -16,6 +16,11 @@ form.addEventListener("submit", event => {
   }
 });
 
+function validatePassword(password) {
+  var pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  return pattern.test(password);
+}
+
 const settingsBtn = document.getElementById("settings-btn");
 
 if (!loggedIn) {
