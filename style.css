@@ -43,11 +43,14 @@ form input[type="text"] {
 
 button {
   padding: 0.5rem 1rem;
-  background-color: #73009d;
+  background-color: #9e0089;
   font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 12pt;
   color: #fff;
+  margin-left:123px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
@@ -56,7 +59,7 @@ button {
   font-family: 'Ubuntu', sans-serif;
   color: #fff;
 }
-.submit {
+.submit-btn {
   background-color: #9e0089;
   font-family: 'Ubuntu', sans-serif;
   width: 200px;
@@ -75,6 +78,17 @@ h5 {
 
 .container {
   background-color: teal;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 20px;
+  margin: 20px;
+}
+
+.new-account-container
+{
+  background-color: #9e0089;
   border-radius: 20px;
   display: flex;
   flex-direction: row;
@@ -163,6 +177,7 @@ main {
   flex: 1;
   height: 100%;
   display: flex;
+  background-color: #fff;
   font-family: 'Ubuntu', sans-serif;
   align-items: center;
   justify-content: center;
@@ -173,7 +188,11 @@ main {
   height: 100%;
   display: flex;
   font-family: 'Ubuntu', sans-serif;
+  background-color: teal;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+border-radius: 20px;
+padding: 20px;
+margin: 20px;
 }
