@@ -28,14 +28,13 @@
         <div class="center-column">
             <h3>Log into your account</h3>
             <form id="login-form">
-                <input type="text" id="username-input" placeholder="Username">
-                <br><br>
-                <input type="text" id="password-input" placeholder="Password">
-                <br><br>
-                <button type="submit">Login</button>
-                <p id="error-message"></p>
-            </form>
-            <h5> <a href="/register.html">Don't have an account yet? Sig in!</a></h5>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Submit</button>
+              </form>
+                <h5> <a href="/register.html">Don't have an account yet? Sig in!</a></h5>
         </div>
     </div>
     <footer class="bottom">FOOTER
