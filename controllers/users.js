@@ -2,20 +2,30 @@ const Users = require("../models/users").Users
 
 async function list(req, res, next) {
     try {
-        const filtro = {
-            name: req.query.name,
-            alias: req.query.alias,
-            id: req.query.id
-        }
         const skip = req.query.skip
         const limit = req.query.limit
         let listado;
-        if (filtro.id){
-            listado = await (Users.lista({_id:filtro.id}));
+        if (req.query.id){
+            listado = await (Users.lista({_id: req.query.id}));
+        } else if (req.query.username && req.query.password) {
+            listado = await (Users.lista({$and:[{username:req.query.username},{alias:req.query.password}]},skip,limit));           
         } else {
-            listado = await (Users.lista({$or:[{name:filtro.name},{alias:filtro.alias}]},skip,limit));           
+            listado = await (Users.lista({},skip,limit));           
         }   
         res.json({listado});
+    } catch(error) {
+        next(error);
+    }
+}
+
+async function login(req, res, next) {
+    try {
+        let listado;
+        if (req.body.username && req.body.password) {
+            res.json(await (Users.lista({username:req.body.username, password:req.body.password})));           
+        } else {
+            res.json({});
+        }   
     } catch(error) {
         next(error);
     }
@@ -24,13 +34,15 @@ async function list(req, res, next) {
 async function create(req, res, next) {
     try {
         const new_post = {
-            name: req.query.name,
-            alias: req.query.alias,
-            password: req.query.password
+            name:  req.body.name,
+            surname:  req.body.surname,
+            password:  req.body.password,
+            username: req.body.username,
+            email: req.body.email
         };
-        const new_honor = new Users(new_post);        
-        new_honor.save();
-        res.json({ result: new_honor});
+        const newRegister = new Users(new_post);        
+        newRegister.save();
+        res.json({ result: newRegister});
     } catch (err) {
         next(err);
     }
@@ -38,10 +50,11 @@ async function create(req, res, next) {
 
 async function update(req, res) {
     const edit_post = {
-        id: req.query.id,
-        name: req.query.name,
-        alias: req.query.alias,
-        password: req.query.password
+        name:  req.body.name,
+        surname:  req.body.surname,
+        password:  req.body.password,
+        username: req.body.username,
+        email: req.body.email
     };
     const current_register = await Users.findById(edit_post.id);
     const postUpdated = await Users.updateOne( { _id: current_register.id}, 
@@ -64,4 +77,4 @@ async function delRegister(req, res, next) {
     }
 }
 
-module.exports = { list, create, update, delRegister };
+module.exports = { list, create, update, delRegister, login };
