@@ -4,9 +4,10 @@ const nameInput = document.getElementById("name");
 const surnameInput = document.getElementById("surname");
 const passwordInput = document.getElementById("password");
 const submitButton = document.getElementById("submit");
+const form = document.getElementById('signup-form');
 
 submitButton.addEventListener("click", function(event) {
-  event.preventDefault();
+  //event.preventDefault();
 
   // Validate username
   const username = usernameInput.value;

@@ -5,6 +5,7 @@ const listUser = require("../controllers/users").list;
 const createUser = require("../controllers/users").create;
 const updateUser = require("../controllers/users").update;
 const deleteUser = require("../controllers/users").delRegister;
+const login = require("../controllers/users").login;
 
 /**
  * Devuelve la información de los usuarios.
@@ -18,6 +19,13 @@ router.get('/', function(req, res, next) {
  */
 router.post('/', function(req, res, next) {
   createUser(req, res, next);
+});
+
+/**
+ * Login.
+ */
+router.post('/login', function(req, res, next) {
+  login(req, res, next);
 });
 
 /**

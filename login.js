@@ -16,7 +16,6 @@ form.addEventListener("click", event => {
     errorMessage.textContent = "Invalid username or password.";
   }
 });
-
 function validatePassword(password) {
   var pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
   return pattern.test(password);
@@ -41,7 +40,7 @@ form.addEventListener('click', (event) => {
   })
     .then(response => response.json())
     .then(data => {
-      // handle the API response
+      console.log(data);
     })
     .catch(error => {
       console.error(error);
