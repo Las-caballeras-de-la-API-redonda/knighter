@@ -4,9 +4,10 @@ const nameInput = document.getElementById("name");
 const surnameInput = document.getElementById("surname");
 const passwordInput = document.getElementById("password");
 const submitButton = document.getElementById("submit");
+const form = document.getElementById('signup-form');
 
 submitButton.addEventListener("click", function(event) {
-  event.preventDefault();
+  //event.preventDefault();
 
   // Validate username
   const username = usernameInput.value;
@@ -48,9 +49,9 @@ submitButton.addEventListener("click", function(event) {
      alert("Password must be at least 12 characters long and include at least one uppercase letter, one lowercase letter, one number, and one symbol!");
      return;
    }
- 
-   const form = document.getElementById('signup-form');
-   form.addEventListener('submit', (event) => {
+});
+   
+form.addEventListener('submit', (event) => {
      event.preventDefault();
      
      const username = document.getElementById('username').value;
@@ -74,5 +75,3 @@ submitButton.addEventListener("click", function(event) {
          console.error(error);
        });
    });
-   
- });
