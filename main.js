@@ -41,7 +41,7 @@ fetch(url)
     postHTML += `
     <div class="knighter-container">
     <div class="knighter-header">
-    <img src="assets/images/logosquare.PNG" alt="avatar">
+    <img src="images/logosquare.PNG" alt="avatar">
     <a class="knighter-name" href="/userprofile.html">${i.usuario}</a>
     <br>
     <p class="knighter-date">${i.fecha}</p>
@@ -78,7 +78,7 @@ fetch(url)
   li.innerHTML = `
   <div class="knighter-container">
   <div class="knighter-header">
-  <img src="assets/images/logosquare.PNG" alt="avatar">
+  <img src="images/logosquare.PNG" alt="avatar">
   <a class="knighter-name" href="/userprofile.html">${usuario}</a> //hay que poner el usuario
   </div>
   <p class="knighter-text">${knighter}</p>
@@ -157,37 +157,6 @@ knighterList.addEventListener("click", function(event) {
         console.error("Error connecting to the server");
         });
 }}})
-
-
-//SEARCHING TWEETS & PROFILES 
-//VERISÓN CON EL API- 
-// searchInput.addEventListener("keyup",function(event){
-//   const query= event.target.value; //el valor de la busqueda
-//   const url = `http://127.0.0.1:3000/api/listadeposts?usuario=${query}`
-//   fetch(url)
-//   .then(response => response.json())
-//     .then(data => {
-//     console.log(data)
-//     let resultsHTML = "";
-//     for (const result of data.lista) {
-//       resultsHTML += `
-//       <div class="knighter-container">
-//       <div class="knighter-header">
-//       <img src="images/logosquare.PNG" alt="avatar">
-//       <h3>${result.usuario}</h3>
-//       <br>
-//       <p class="knighter-date">${result.fecha}</p>
-//       </div>
-//       <p class="knighter-text">${result.texto}</p>
-//       <div class="knighter-footer">
-//       <button class="honor-button" value="${result._id}">Honor</button>
-//           <span class="honor-count">0</span>
-//           <button class="followButton">Follow</button>
-//         </div>
-//         </div>` 
-//       }
-//       searchResults.innerHTML = resultsHTML;
-//     })});
 
 
 //VERSIÓN CON JAVASCRIPT SIN API
