@@ -53,13 +53,13 @@ submitButton.addEventListener("click", function(event) {
     const nameUser = document.getElementById('name').value;
     const surnameUser = document.getElementById('surname').value;
     const passwordUser = document.getElementById('password').value;
-    location.replace("success.html");
 
-    fetch('http://localhost:3000/api/users?' + new URLSearchParams({alias:userName,name:emailUser,password:passwordUser}) ,{
+
+    fetch('http://localhost:3000/api/users?' + new URLSearchParams({username:userName,name:emailUser,password:passwordUser}) ,{
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        alias: userName,
+        username: userName,
         name: emailUser,
         password: passwordUser
       })
@@ -67,8 +67,7 @@ submitButton.addEventListener("click", function(event) {
       .then(response => response.json())
       .then(data => {
         console.log(data);
-      
-     
+        location.replace("success.html");
       })
       .catch(error => {
         console.error(error);

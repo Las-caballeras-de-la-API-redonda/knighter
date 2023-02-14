@@ -23,8 +23,6 @@ if (!loggedIn) {
   const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
   profileButton.style.display = "none"
   settingsButton.style.display = "none"
-  // followButton.style.display = "none";//problema se ocultan todos los tweets
-  // honorButton.style.display = "none";//problema se ocultan todos los tweets
 }
 
 

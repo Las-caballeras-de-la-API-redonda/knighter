@@ -30,16 +30,22 @@ const inserted = await Publicaciones.insertMany([
     
         {
         "fecha": new Date(),
-        "usuario": "Caballera_frustrada",
+        "usuario": "CaballeraFrustrada",
         "texto": "Está visto, no vayamos a Camelot, es un lugar estúpido",
         "imagen": "bici.jpg",
         
         },
         {
         "fecha": new Date(),
-        "usuario": "Bestia_Negra",
+        "usuario": "BestiaNegra",
         "texto": "¡Soy la legendaria Bestia Negra de Aaaaargh!",
-        "imagen": "bici.jpg",
+        "imagen": "hola.jpg",
+        },
+        {
+        "fecha": new Date(),
+        "usuario": "CampesinaCa",
+        "texto": "¿Quién es su señor?¡-No tenemos señor, somos una comunidad anarco-sindicalista.",
+        "imagen": "cara.jpg"
         }
         
         

@@ -16,14 +16,14 @@ form.addEventListener("click", event => {
   .then(data => {
     const userList = data.listado //guardamos el listado de los usuarios en una variable (es objeto)
     const arrayUserList = Object.values(userList) //convertimos el objeto en un arrray para poder comprobar si esta la contraseña
-    const user = arrayUserList.find(user => user.alias === username && user.password === password);
+    const user = arrayUserList.find(user => user.username === username && user.password === password);
     if (user) {
-    console.log(user.alias); // show de user
+    console.log(user.username); // show de user
     console.log(user.password); // show de password
       // Update login status and show hidden buttons of other 
       localStorage.setItem('loggedIn', true);
-      localStorage.setItem('email', user.name);
-      localStorage.setItem('username', user.alias);
+      localStorage.setItem('email', user.email);
+      localStorage.setItem('username', user.username);
       // Redirect to main page
       window.location.href = "/main.html";
     } else {
