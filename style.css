@@ -80,6 +80,7 @@ p {
   font-family: 'Ubuntu', sans-serif;
 }
 .following,
+.follow-button,
 .followers {
   background-color: teal;
   color: white;
@@ -87,6 +88,10 @@ p {
   border-radius: 5px;
   border: none;
   cursor: pointer;
+  width:130px;
+  margin-left: 25px;
+  margin-bottom: 10px;
+  
 }
 
 
@@ -95,6 +100,15 @@ p {
   border-radius: 20px;
   display: flex;
   flex-direction: row;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 20px;
+  margin: 20px;
+}
+.profile-container {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: 'Ubuntu', sans-serif;
   padding: 20px;
   margin: 20px;
@@ -181,7 +195,7 @@ p {
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
@@ -190,7 +204,9 @@ footer {
   height: 85px;
   background-color: rgb(114, 1, 126);
   display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
   justify-content: space-around;
 }
 
@@ -210,13 +226,14 @@ main {
 
 .side-column {
   width: 20%; /* The width is set to 20% */
-  height: 100%;
+  height: 80%;
   display: flex;
   position:fixed; /* The position is set to fixed */
   background-color: #ff00ff45;
   font-family: 'Ubuntu', sans-serif;
   align-items: center;
   justify-content: center;
+  margin-bottom: 100px; /* The margin bottom is set to the width of the side column */
 }
 
 .center-column {
@@ -231,8 +248,8 @@ main {
   padding: 20px;
   margin: 20px;
   margin-top: 100px; /* The margin-left is set to the width of the side column */
-  margin-bottom: 100px; /* The margin-left is set to the width of the side column */
-  margin-left: 20%; /* The margin-left is set to the width of the side column */
+  margin-bottom: 100px; /* The margin bottom is set to the width of the side column */
+  margin-left: 23%; /* The margin-left is set to the width of the side column */
 }
 
 .header {
