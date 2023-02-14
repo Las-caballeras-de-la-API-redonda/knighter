@@ -41,7 +41,7 @@ fetch(url)
     postHTML += `
     <div class="knighter-container">
     <div class="knighter-header">
-    <img src="images/logosquare.PNG" alt="avatar">
+    <img src="assets/images/logosquare.PNG" alt="avatar">
     <a class="knighter-name" href="/userprofile.html">${i.usuario}</a>
     <br>
     <p class="knighter-date">${i.fecha}</p>
@@ -78,7 +78,7 @@ fetch(url)
   li.innerHTML = `
   <div class="knighter-container">
   <div class="knighter-header">
-  <img src="images/logosquare.PNG" alt="avatar">
+  <img src="assets/images/logosquare.PNG" alt="avatar">
   <a class="knighter-name" href="/userprofile.html">${usuario}</a> //hay que poner el usuario
   </div>
   <p class="knighter-text">${knighter}</p>
