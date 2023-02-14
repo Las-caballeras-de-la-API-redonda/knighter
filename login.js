@@ -21,7 +21,10 @@ form.addEventListener("click", event => {
     console.log(user.name); // show de user
     console.log(user.password); // show de password
       // Update login status and show hidden buttons of other 
-      loggedIn = true;
+      localStorage.setItem('loggedIn', true);
+      localStorage.setItem('username', user.name);
+      localStorage.setItem('email', user.email);
+      localStorage.setItem('user', user.alias);
       // Redirect to main page
       window.location.href = "/main.html";
     } else {
@@ -35,49 +38,4 @@ form.addEventListener("click", event => {
 
 
 
-
-
-
-
-// form.addEventListener("click", event => {
-//   event.preventDefault();
-  
-//   const username = usernameInput.value;
-//   const password = passwordInput.value;
-  
-//   if (username === "admin" && password === "password") {
-//     window.location.href = "login.html";
-//   } else {
-//     errorMessage.textContent = "Invalid username or password.";
-//   }
-// });
-// function validatePassword(password) {
-//   var pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-//   return pattern.test(password);
-// }
-
-// const settingsBtn = document.getElementById("settings-btn");
-
-// // if (!loggedIn) {
-// //   settingsBtn.style.display = "none";
-// // }
-
-// form.addEventListener('click', (event) => {
-//   // event.preventDefault();
-//   const username = document.getElementById('username-input').value;
-//   const password = document.getElementById('password-input').value;
-//     fetch('http://localhost:3000/api/users', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify({ username, password })
-//   })
-//     .then(response => response.json())
-//     .then(data => {
-//       console.log(data);
-//     })
-//     .catch(error => {
-//       console.error(error);
-//     });
-// });
+//save the LOGIN in the LOCAL STORAGE : 

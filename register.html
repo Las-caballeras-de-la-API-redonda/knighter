@@ -58,7 +58,16 @@
           <p class="copyright-footer">Copyright © Las caballeras de la API redonda. 2023. All rights reserved.</p>
         </div>
       </footer>
-
+      <script>
+        const navButtons = document.getElementsByClassName("nav-button")
+        //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
+        const loggedIn = localStorage.getItem('loggedIn') === 'true';
+        if (!loggedIn) { 
+          const profileButton = navButtons[1]; 
+          const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
+          profileButton.style.display = "none"
+          settingsButton.style.display = "none"}
+      </script>
     <script src="register.js"></script>
     <div id="app"></div>
 </body>

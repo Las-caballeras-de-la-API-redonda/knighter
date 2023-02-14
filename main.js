@@ -1,4 +1,5 @@
 
+const navButtons = document.getElementsByClassName("nav-button")
 const knighterForm = document.getElementById("knighter-form");
 const knighterButton = document.getElementById("knighter-button");
 const knighterInput = document.getElementById("knighter-input");
@@ -11,21 +12,17 @@ let u = ""
 const searchInput = document.getElementById("search-input");
 
 
-const press = localStorage.getItem("press")
-// if (press == "true") {
-// followButton.innerHTML = "Following!";
-// } else {
-//   followButton.innerHTML = "Follow!";
-// }
-
-
-// variable to indicate if the user is logged in or not 
-let loggedIn = true //cambiar si es true o false 
+// const press = localStorage.getItem("press")
 
 
 //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
+const loggedIn = localStorage.getItem('loggedIn') === 'true';
 if (!loggedIn) {
   knighterForm.style.display = "none"; 
+  const profileButton = navButtons[1]; 
+  const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
+  profileButton.style.display = "none"
+  settingsButton.style.display = "none"
   // followButton.style.display = "none";//problema se ocultan todos los tweets
   // honorButton.style.display = "none";//problema se ocultan todos los tweets
 }
