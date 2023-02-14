@@ -34,15 +34,9 @@
     <div class="container">
         <div class="side-column"></div>
         <div class="center-column">
-            <h3>Log into your account</h3>
-            <form id="login-form">
-                <label id="username" for="username">Email:</label>
-                <input type="text" id="username-input" name="username" required>
-                <label for="password">Password:</label>
-                <input type="password" id="password-input" name="password" required>
-                <button id="submitButton" type="submit">Submit</button>
-              </form>
-                <h5> <a href="/register.html">Don't have an account yet? Sig in!</a></h5>
+                <button onclick="closeSeason()">CLOSE SEASON</button>
+                <br>
+                <button onclick="deleteAcount()">DELETE ACCOUNT</button>
         </div>
     </div>
     <footer>
@@ -51,18 +45,36 @@
           <p class="copyright-footer">Copyright © Las caballeras de la API redonda. 2023. All rights reserved.</p>
         </div>
       </footer>
-    <script>
-      const navButtons = document.getElementsByClassName("nav-button")
-      //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
-      const loggedIn = localStorage.getItem('loggedIn') === 'true';
-      if (!loggedIn) { 
-        const profileButton = navButtons[1]; 
-        const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
-        profileButton.style.display = "none"
-        settingsButton.style.display = "none"}
-    </script>
-    <script src="login.js"></script>
+
+      <script>
+		function deleteAcount() {
+            if (confirm('Are you sure that you want to delete your account?')){
+            localStorage.removeItem("loggedIn");
+            localStorage.removeItem("username");
+            localStorage.removeItem("email");
+            localStorage.removeItem("user");
+            window.location.href = "/main.html";
+        }else{
+            alert("You made a good decision! Enjoy Knighter!")
+        }}
+
+		function closeSeason() {
+            if (confirm('Are you sure that you want to log out?')){
+            localStorage.removeItem("loggedIn");
+            localStorage.removeItem("username");
+            localStorage.removeItem("email");
+            localStorage.removeItem("id");
+
+            window.location.href = "/login.html";}
+            else{
+                alert("You made a good decision! Enjoy Knighter!")
+            }
+			
+		}
+	</script>
+
     <div id="app"></div>
+
 
 </body>
 

@@ -12,19 +12,25 @@
   
 <body>   
     <!-- NAVBAR  -->
-    
-    <nav>
-        <div class="logo">
-            <img src="images\logoname.PNG" alt="Logo">
-        </div>
-        <form type="search-bar">
+
+  
+    <header>
+      <nav class="fixed-nav">
+        <div class="nav-left">
+          <img src="images\logoname.PNG" alt="Logo" class="logo">
+          <form type="search-bar">
             <input type="text" id="search-input" placeholder="Search">
-        </form>
-        <a href="/main.html">Home</a>
-        <a href="/userprofile.html">My profile</a>
-        <a id="login-btn" href="/login.html">Login</a>
-        <a id="settings-btn" href="/login.html">Settings</a>
-    </nav>  
+          </form>
+        </div>
+        <div class="nav-right">
+          <a button class="nav-button" href="/main.html">Home</a button>
+            <a button class="nav-button" href="/userprofile.html">My profile</a button>
+            <a button class="nav-button" href="/login.html">Login</a button>
+            <a button  class="nav-button" href="/settings.html" >Settings</a button>
+        </div>
+      </nav>
+    </header>
+  
     
     <!-- Publish new twitter (knighter) - Only if the user is logged in  -->
  
@@ -71,13 +77,14 @@
     <!-- FOOTER  -->
       
     
-      <footer>
-          <p class="copyright-footer">Copyright © 2023. All rights reserved.</p><br>
-          <img class="footer-logo" src="images/teamlogo.PNG"      alt="Footer Logo">
-        </div>
-      </footer>
+    <footer>
+      <div style="text-align: center;">
+        <img class="footer-logo" src="images/teamlogo.PNG" alt="Footer Logo">
+        <p class="copyright-footer">Copyright © Las caballeras de la API redonda. 2023. All rights reserved.</p>
+      </div>
+    </footer>
       
-    <script src="main.js"></script>
+      <script src="main.js"></script>
     <div id="app"></div>
 </body>
 

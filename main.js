@@ -1,4 +1,5 @@
 
+const navButtons = document.getElementsByClassName("nav-button")
 const knighterForm = document.getElementById("knighter-form");
 const knighterButton = document.getElementById("knighter-button");
 const knighterInput = document.getElementById("knighter-input");
@@ -11,21 +12,17 @@ let u = ""
 const searchInput = document.getElementById("search-input");
 
 
-const press = localStorage.getItem("press")
-// if (press == "true") {
-// followButton.innerHTML = "Following!";
-// } else {
-//   followButton.innerHTML = "Follow!";
-// }
-
-
-// variable to indicate if the user is logged in or not 
-let loggedIn = true //cambiar si es true o false 
+// const press = localStorage.getItem("press")
 
 
 //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
+const loggedIn = localStorage.getItem('loggedIn') === 'true';
 if (!loggedIn) {
   knighterForm.style.display = "none"; 
+  const profileButton = navButtons[1]; 
+  const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
+  profileButton.style.display = "none"
+  settingsButton.style.display = "none"
   // followButton.style.display = "none";//problema se ocultan todos los tweets
   // honorButton.style.display = "none";//problema se ocultan todos los tweets
 }
@@ -157,37 +154,6 @@ knighterList.addEventListener("click", function(event) {
         console.error("Error connecting to the server");
         });
 }}})
-
-
-//SEARCHING TWEETS & PROFILES 
-//VERISÓN CON EL API- 
-// searchInput.addEventListener("keyup",function(event){
-//   const query= event.target.value; //el valor de la busqueda
-//   const url = `http://127.0.0.1:3000/api/listadeposts?usuario=${query}`
-//   fetch(url)
-//   .then(response => response.json())
-//     .then(data => {
-//     console.log(data)
-//     let resultsHTML = "";
-//     for (const result of data.lista) {
-//       resultsHTML += `
-//       <div class="knighter-container">
-//       <div class="knighter-header">
-//       <img src="images/logosquare.PNG" alt="avatar">
-//       <h3>${result.usuario}</h3>
-//       <br>
-//       <p class="knighter-date">${result.fecha}</p>
-//       </div>
-//       <p class="knighter-text">${result.texto}</p>
-//       <div class="knighter-footer">
-//       <button class="honor-button" value="${result._id}">Honor</button>
-//           <span class="honor-count">0</span>
-//           <button class="followButton">Follow</button>
-//         </div>
-//         </div>` 
-//       }
-//       searchResults.innerHTML = resultsHTML;
-//     })});
 
 
 //VERSIÓN CON JAVASCRIPT SIN API
