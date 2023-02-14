@@ -47,10 +47,22 @@
       </footer>
 
       <script>
+   const navButtons = document.getElementsByClassName("nav-button")
+        //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
+        const loggedIn = localStorage.getItem('loggedIn') === 'true';
+        if (!loggedIn) {
+          const profileButton = navButtons[1]; 
+          const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
+          profileButton.style.display = "none"
+          settingsButton.style.display = "none"
+        }else{
+          const loginButton = navButtons[2];
+          loginButton.style.display ="none"
+        }
 		function deleteAcount() {
             if (confirm('Are you sure that you want to delete your account?')){
             localStorage.removeItem("loggedIn");
-            localStorage.removeItem("username");
+            localStorage.removeItem("name");
             localStorage.removeItem("email");
             localStorage.removeItem("user");
             window.location.href = "/main.html";

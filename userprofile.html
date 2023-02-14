@@ -42,8 +42,8 @@
     <div class="profilecontainer">
       <img src="images\lifeofbrian.jpg" alt="Profile Picture" class="profile-picture">
       <div class="user-info">
-        <h1 class="name">Depressed Knight</h1>
-        <p class="username">@depressedknight</p>
+        <h1 class="username"></h1>
+        <p class="username"></p>
       </div>
       <div class="follow-info">
         <button class="following">Following</button>
@@ -56,6 +56,11 @@
     </div>
   </div>
 
+  <script>
+    var valueUser = localStorage.getItem('username');
+    var drawUsername = document.querySelector('.username');
+    drawUsername.innerHTML = valueUser
+  </script>
 
   <div class="center-column">
 
@@ -69,44 +74,38 @@
     <div id="knighter-list">
     </div>
 
-    <!-- EJEMPLO DE KNIGHTER(TWEET) -->
-    <div class="knighter-container">
-      <div class="knighter-header">
-        <img src="images/logosquare.PNG" alt="avatar">
-        <a class="knighter-name">Depressed Knight</a>
-        <p><br></p>
-        <p>@DepressedKnight</p>
-        <!-- <p class="knighter-date">${dateString}</p> -->
-      </div>
-      <p class="knighter-text">Knighter is the best app in the world!</p>
-      <div class="knighter-footer">
-        <button class="icon-button" value="0">
-          <i class="fas fa-shield-heart"></i>
-        </button>
-        <span class="honor-count">3</span>
-        <button class="followButton">Follow</button>
-      </div>
-
-
-    </div>
   </div>
   </div>
   <div class="side-column"></div>
   <br>
   <br>
   <!-- FOOTER  -->
-
-
-
-  <script></script>
-  <script src="main.js"></script>
-  <div id="app"></div>
   <footer>
     <div style="text-align: center;">
       <img class="footer-logo" src="images/teamlogo.PNG" alt="Footer Logo">
       <p class="copyright-footer">Copyright © Las caballeras de la API redonda. 2023. All rights reserved.</p>
     </div>
   </footer>
+
+  <script src="main.js"></script>
+  <div id="app"></div>
+
+  <script>
+    const navButtons = document.getElementsByClassName("nav-button")
+    //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
+    const loggedIn = localStorage.getItem('loggedIn') === 'true';
+    if (!loggedIn) {
+      knighterForm.style.display = "none"; 
+      const profileButton = navButtons[1]; 
+      const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
+      profileButton.style.display = "none"
+      settingsButton.style.display = "none"
+    }else{
+      const loginButton = navButtons[2];
+      loginButton.style.display ="none"
+    }
+  </script>
+
 </body>
 
 </html>

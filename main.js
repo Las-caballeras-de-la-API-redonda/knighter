@@ -4,8 +4,8 @@ const knighterForm = document.getElementById("knighter-form");
 const knighterButton = document.getElementById("knighter-button");
 const knighterInput = document.getElementById("knighter-input");
 const knighterList= document.getElementById("knighter-list");
-const followButton = document.getElementById("followButton");
-const honorButton = document.querySelector(".knighter-footer.honor-button")
+const followButton = document.getElementsByClassName("followButton");
+const honorButton = document.getElementsByClassName("honor-button")
 let newFollowButton = document.querySelector(".knighter-footer.followButton");
 let id = ""
 let u = "" 
@@ -23,8 +23,9 @@ if (!loggedIn) {
   const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
   profileButton.style.display = "none"
   settingsButton.style.display = "none"
-  // followButton.style.display = "none";//problema se ocultan todos los tweets
-  // honorButton.style.display = "none";//problema se ocultan todos los tweets
+}else{
+  const loginButton = navButtons[2];
+  loginButton.style.display ="none"
 }
 
 
@@ -35,6 +36,14 @@ fetch(url)
 .then(data => {
   let postHTML = [];
   for (const i of data.listado) {
+    let buttonHTML = '';
+    if (loggedIn) {
+      buttonHTML = `
+        <button class="honor-button" value="${i._id}">Honor</button>
+        <span class="honor-count">0</span>
+        <button class="followButton">Follow</button>
+      `;
+    }
     postHTML += `
     <div class="knighter-container">
     <div class="knighter-header">
@@ -45,9 +54,7 @@ fetch(url)
     </div>
     <p class="knighter-text">${i.texto}</p>
     <div class="knighter-footer">
-    <button class="honor-button" value="${i._id}">Honor</button>
-        <span class="honor-count">0</span>
-        <button class="followButton">Follow</button>
+    ${buttonHTML}
       </div>
       </div>` 
       document.getElementById('knighter-list').innerHTML = postHTML;
@@ -57,7 +64,9 @@ fetch(url)
 //PUBLISH A KNIGHTER
 //adding an event to the button for publishing a knighter and conecting with the API
   knighterButton.addEventListener("click", function(){
-    const usuario = "Gabriela"; //IMPORTANTE!!!!cambiar el usuario por el usuario logueado
+    var valueUser = localStorage.getItem('username');
+
+    const usuario = valueUser ; //IMPORTANTE!!!!cambiar el usuario por el usuario logueado
     const knighter = knighterInput.value ;
       console.log(knighter)
       const url = 'http://127.0.0.1:3000/api/listadeposts?' + new URLSearchParams({usuario:usuario,texto:knighter,imagen:"img"});
@@ -76,7 +85,7 @@ fetch(url)
   <div class="knighter-container">
   <div class="knighter-header">
   <img src="images/logosquare.PNG" alt="avatar">
-  <a class="knighter-name" href="/userprofile.html">${usuario}</a> //hay que poner el usuario
+  <a class="knighter-name" href="/userprofile.html">${usuario}</a> 
   </div>
   <p class="knighter-text">${knighter}</p>
   <button class="honor-button" value = ${data["result"]}>Honor</button>

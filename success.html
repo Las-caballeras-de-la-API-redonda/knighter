@@ -13,20 +13,20 @@
     <div>
         <script src="login.js"></script>
         <header>
-            <nav class="fixed-nav">
-                <div class="nav-left">
-                  <img src="images\logoname.PNG" alt="Logo" class="logo">
-                  <form type="search-bar">
-                    <input type="text" id="search-input" placeholder="Search">
-                  </form>
-                </div>
-                <div class="nav-right">
-                  <a button class="nav-button" href="/main.html">Home</a button>
-                  <a button class="nav-button" href="/userprofile.html">My profile</a button>
-                  <a button class="nav-button" href="/login.html">Login</a button>
-                  <a button class="nav-button" href="/register.html">New Knighter</a button>
-                </div>
-              </nav>
+          <nav class="fixed-nav">
+            <div class="nav-left">
+              <img src="images\logoname.PNG" alt="Logo" class="logo">
+              <form type="search-bar">
+                <input type="text" id="search-input" placeholder="Search">
+              </form>
+            </div>
+            <div class="nav-right">
+              <a button class="nav-button" href="/main.html">Home</a button>
+                <a button class="nav-button" href="/userprofile.html">My profile</a button>
+                <a button class="nav-button" href="/login.html">Login</a button>
+                <a button class="nav-button" href="/settings.html" >Settings</a button>
+            </div>
+          </nav>
         </header>
     </div>
    
@@ -51,6 +51,20 @@
         </div>
       </footer>
 
+      <script>
+        const navButtons = document.getElementsByClassName("nav-button")
+        //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
+        const loggedIn = localStorage.getItem('loggedIn') === 'true';
+        if (!loggedIn) {
+          const profileButton = navButtons[1]; 
+          const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
+          profileButton.style.display = "none"
+          settingsButton.style.display = "none"
+        }else{
+          const loginButton = navButtons[2];
+          loginButton.style.display ="none"
+        }
+      </script>
  
     <div id="app"></div>
 </body>

@@ -36,7 +36,7 @@
         <div class="center-column">
             <h3>Log into your account</h3>
             <form id="login-form">
-                <label id="username" for="username">Email:</label>
+                <label id="username" for="username">User:</label>
                 <input type="text" id="username-input" name="username" required>
                 <label for="password">Password:</label>
                 <input type="password" id="password-input" name="password" required>
@@ -55,11 +55,15 @@
       const navButtons = document.getElementsByClassName("nav-button")
       //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
       const loggedIn = localStorage.getItem('loggedIn') === 'true';
-      if (!loggedIn) { 
+      if (!loggedIn) {
         const profileButton = navButtons[1]; 
         const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
         profileButton.style.display = "none"
-        settingsButton.style.display = "none"}
+        settingsButton.style.display = "none"
+      }else{
+        const loginButton = navButtons[2];
+        loginButton.style.display ="none"
+      }
     </script>
     <script src="login.js"></script>
     <div id="app"></div>
