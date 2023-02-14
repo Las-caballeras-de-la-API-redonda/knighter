@@ -4,28 +4,28 @@ const passwordInput = document.getElementById("password-input");
 const errorMessage = document.getElementById("error-message");
 const form = document.getElementById('submit');
 
-form.addEventListener("click", event => {
-  event.preventDefault();
+// form.addEventListener("click", event => {
+//   event.preventDefault();
   
-  const username = usernameInput.value;
-  const password = passwordInput.value;
+//   const username = usernameInput.value;
+//   const password = passwordInput.value;
   
-  if (username === "admin" && password === "password") {
-    window.location.href = "login.html";
-  } else {
-    errorMessage.textContent = "Invalid username or password.";
-  }
-});
-function validatePassword(password) {
-  var pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-  return pattern.test(password);
-}
+//   if (username === "admin" && password === "password") {
+//     window.location.href = "login.html";
+//   } else {
+//     errorMessage.textContent = "Invalid username or password.";
+//   }
+// });
+// function validatePassword(password) {
+//   var pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+//   return pattern.test(password);
+// }
 
 const settingsBtn = document.getElementById("settings-btn");
 
-// if (!loggedIn) {
-//   settingsBtn.style.display = "none";
-// }
+if (!loggedIn) {
+  settingsBtn.style.display = "none";
+}
 
 form.addEventListener('click', (event) => {
   event.preventDefault();
