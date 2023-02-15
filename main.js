@@ -124,12 +124,17 @@ knighterList.addEventListener("click", function(event) {
           headers: { 'Content-Type': 'application/json' 
         }})
           .then((resp) => resp.json())
-          .then((data) => console.log(data))
+          .then((data) => {
+            const followerList = data.result
+            const arrayFollowList = Object.values(followerList)
+            console.log(arrayFollowList)
+          })
           .catch((error) => {
+            console.log(error)
             console.error("Error connecting to the server");
           });
         }}
-})
+      })
 
 
 //ADDING AN EVENT FOR THE HONOR BUTTON

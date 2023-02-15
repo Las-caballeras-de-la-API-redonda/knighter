@@ -175,3 +175,5 @@ function filterKnighters() {
 searchInput.addEventListener("keyup", function() {
   filterKnighters();
 });
+
+//for show the followings buttons
