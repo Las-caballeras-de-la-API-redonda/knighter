@@ -1,3 +1,5 @@
+/*-------------------APPLY TO ALL-------------------------*/
+/*PAGE PARTS*/
 body {
    background-image: url('images/fondo.jpg');
   background-repeat: no-repeat;
@@ -5,6 +7,87 @@ body {
   background-size: cover;
   font-family: 'Ubuntu', sans-serif;
   font-size: 14pt;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  height: 95px;
+  background: #B300C5;
+  background: -moz-linear-gradient(top, #B300C5 0%, #6900A4 53%, #000000 100%);
+  background: -webkit-linear-gradient(top, #B300C5 0%, #6900A4 53%, #000000 100%);
+  background: linear-gradient(to bottom, #B300C5 0%, #6900A4 53%, #000000 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 120px);
+}
+
+.side-column {
+  width: 15%;
+  /* The width is set to 20% */
+  height: 70%;
+  display: flex;
+  position: fixed;
+  /* The position is set to fixed */
+  background-color: #ff00ff45;
+  font-family: 'Ubuntu', sans-serif;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+  /* The margin bottom is set to the width of the side column */
+}
+
+.center-column {
+  width: 60%;
+  /* The width is set to 3 times wider than the side column */
+  height: 100%;
+  display: flex;
+  font-family: 'Ubuntu', sans-serif;
+  background: #8B00CE;
+  background: -moz-linear-gradient(top, #8B00CE 0%, #0087A4 0%, #B300C5 100%);
+  background: -webkit-linear-gradient(top, #8B00CE 0%, #0087A4 0%, #B300C5 100%);
+  background: linear-gradient(to bottom, #8B00CE 0%, #0087A4 0%, #B300C5 100%);
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  padding: 20px;
+  margin-left: 18% auto;
+  /* The margin-left is set to the width of the side column */
+  margin-right: 22%;
+  /* The margin-left is set to the width of the side column */
+  flex-direction: column;
+  margin: 100px auto; / adjust top and bottom margin */
+  }
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.follow-info {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
 }
 
 nav {
@@ -15,6 +98,27 @@ nav {
   align-items: center;
 
   font-family: 'Ubuntu', sans-serif;
+}
+
+.fixed-nav {
+  position: fixed;
+  background-color: rgba(0, 113, 112, 0.759);
+  height: 60px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
 }
 
 form {
@@ -42,32 +146,7 @@ form input[type="text"] {
   margin-right: 1rem;
 }
 
-button {
-  padding: 0.5rem 1rem;
-  background-color: #9e0089;
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: bold;
-  font-size: 12pt;
-  color: #fff;
-  margin-left: 123px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.settings-btn {
-  background-color: #9e0089;
-  font-family: 'Ubuntu', sans-serif;
-  color: #fff;
-}
-
-.submit-btn {
-  background-color: #9e0089;
-  font-family: 'Ubuntu', sans-serif;
-  width: 200px;
-  height: 50px;
-  color: #fff;
-}
+/*TEXT LEVELS*/
 
 h1,
 h2,
@@ -79,6 +158,7 @@ p {
   text-shadow: 0 0 10px teal;
   font-family: 'Ubuntu', sans-serif;
 }
+
 .following,
 .follow-button,
 .followers {
@@ -88,10 +168,10 @@ p {
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  width:130px;
+  width: 130px;
   margin-left: 25px;
   margin-bottom: 10px;
-  
+
 }
 
 
@@ -124,39 +204,105 @@ p {
   margin: 20px;
 }
 
+
+
+
+
+
+
+
+/*BUTTONS*/
+
+/*.follow-button {
+  display: none;
+}
+
+/* Only show the follow button when logged in and watching a profile that is not yours
+.logged-in .follow-button {
+  display: block;
+}
+ */
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: #9e0089;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 12pt;
+  color: #fff;
+  margin-left: 123px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.settings-btn {
+  background-color: #9e0089;
+  font-family: 'Ubuntu', sans-serif;
+  color: #fff;
+}
+
+.submit-btn {
+  background-color: #9e0089;
+  font-family: 'Ubuntu', sans-serif;
+  width: 200px;
+  height: 50px;
+  color: #fff;
+}
+
 .btn {
   background-color: purple;
   color: white;
   border-radius: 20px;
   padding: 10px 20px;
 
-  margin: 20px;
-  font-size: 14pt;
-  text-align: center;
+h2 {
+  color: rgb(176, 176, 176);
+  text-shadow: 0 0 10px teal;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: larger;
+}
+
+h3 {
+  color: rgb(176, 176, 176);
+  text-shadow: 0 0 10px teal;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: medium;
+}
+
+h4 {
+  color: rgb(176, 176, 176);
+  text-shadow: 0 0 10px teal;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: small;
+}
+
+h5 {
+  color: rgb(176, 176, 176);
+  text-shadow: 0 0 10px teal;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: smaller;
+}
+
+p {
+  color: rgb(176, 176, 176);
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 12px;
+}
+
+.following,
+.follow-button,
+.followers {
+  background-color: teal;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
   cursor: pointer;
-}
+  width: 130px;
+  margin-left: 25px;
+  margin-bottom: 10px;
 
-
-
-.fixed-nav {
-  position: fixed;
-  background-color: rgba(0, 113, 112, 0.759);
-  height: 60px;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-}
-
-.nav-left,
-.nav-right {
-  display: flex;
-  align-items: center;
 }
 
 .nav-button {
@@ -169,13 +315,6 @@ p {
   cursor: pointer;
 }
 
-.logo {
-  height: 70px;
-  margin-right: 20px;
-  width: auto;
-  border-radius: 20px;
-  top: 0;
-}
 
 
 .search-bar {
@@ -208,7 +347,7 @@ footer {
   align-items: center;
   text-align: center;
   justify-content: space-around;
- 
+
 }
 
 .footer-logo {
@@ -226,31 +365,40 @@ main {
 }
 
 .side-column {
-  width: 20%; /* The width is set to 20% */
+  width: 20%;
+  /* The width is set to 20% */
   height: 80%;
   display: flex;
-  position:fixed; /* The position is set to fixed */
+  position: fixed;
+  /* The position is set to fixed */
   background-color: #ff00ff45;
   font-family: 'Ubuntu', sans-serif;
   align-items: center;
   justify-content: center;
-  margin-bottom: 100px; /* The margin bottom is set to the width of the side column */
+  margin-bottom: 100px;
+  /* The margin bottom is set to the width of the side column */
 }
 
 .center-column {
-  width: 60%; /* The width is set to 3 times wider than the side column */
+  width: 60%;
+  /* The width is set to 3 times wider than the side column */
   height: 100%;
   display: flex;
   font-family: 'Ubuntu', sans-serif;
   background-color: rgb(0, 204, 204);
   align-items: center;
-  justify-content: center;
+  text-align: center;
   border-radius: 20px;
   padding: 20px;
   margin: 20px;
-  margin-top: 100px; /* The margin-left is set to the width of the side column */
-  margin-bottom: 100px; /* The margin bottom is set to the width of the side column */
-  margin-left: 23%; /* The margin-left is set to the width of the side column */
+  margin-top: 100px;
+  /* The margin-left is set to the width of the side column */
+  margin-bottom: 100px;
+  /* The margin bottom is set to the width of the side column */
+  margin-left: 18%;
+  /* The margin-left is set to the width of the side column */
+  margin-right: 22%;
+  /* The margin-left is set to the width of the side column */
 }
 
 .header {
@@ -307,6 +455,41 @@ main {
   font-size: 2.5em;
 }
 
+/*IMAGES*/
+
+.logo {
+  height: 70px;
+  margin-right: 20px;
+  width: auto;
+  border-radius: 20px;
+  top: 0;
+}
+
+.logosuccess {
+  display: block;
+  margin: 0 auto;
+  /* Set left and right margin to auto */
+  height: 230px;
+  width: 230px;
+  border-radius: 20px;
+  top: 0;
+}
+
+.footer-logo {
+  height: 50px;
+  width: auto;
+  border-radius: 50%;
+}
+
+.profile-picture {
+  width: 80px;
+  height: 80px;
+  border-radius: 25px;
+  margin-right: 15px;
+}
+
+
+/*RESPONSIVE*/
 
 @media (max-width: 600px) {
   .knighter-header img {
