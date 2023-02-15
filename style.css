@@ -102,7 +102,10 @@ nav {
 
 .fixed-nav {
   position: fixed;
-  background-color: rgba(0, 113, 112, 0.759);
+  background: rgba(179, 0, 197, 0.65); /* fallback */
+  background: -moz-linear-gradient(top, rgba(179, 0, 197, 0.65) 0%, #24FFDC 83%, #0AC7AF 100%);
+  background: -webkit-linear-gradient(top, rgba(179, 0, 197, 0.65) 0%, #24FFDC 83%, #0AC7AF 100%);
+  background: linear-gradient(to bottom, rgba(179, 0, 197, 0.65) 0%, #24FFDC 83%, #0AC7AF 100%);
   height: 60px;
   top: 0;
   left: 0;
@@ -192,7 +195,7 @@ p {
 /*--------------------------------CONTAINERS-----------------------------------------------*/
 
 .center-column-container {
-  background-color: teal;
+  background-color: rgba(0, 255, 255, 0.44);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -202,7 +205,7 @@ p {
 }
 
 .container {
-  background-color: teal;
+  background-color: rgba(0, 255, 255, 0.44);
   border-radius: 20px;
   display: flex;
   flex-direction: row;
@@ -249,16 +252,22 @@ p {
 }
  */
 
-button {
+button, .btn,.following,
+.follow-button,
+.followers {
   padding: 0.5rem 1rem;
-  background-color: #9e0089;
+  background: #B400FF;
+  background: -moz-radial-gradient(center, #B400FF 0%, #00F1F5 100%);
+  background: -webkit-radial-gradient(center, #B400FF 0%, #00F1F5 100%);
+  background: radial-gradient(ellipse at center, #B400FF 0%, #00F1F5 100%);
   font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
   font-size: 12pt;
-  color: #fff;
-  margin-left: 123px;
+  color: #ffffff;
+  margin: 0 auto;
   border: none;
-  border-radius: 8px;
+  border: 5px outset #00F6F7;
+  border-radius: 20px;
   cursor: pointer;
 }
 
