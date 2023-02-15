@@ -27,7 +27,13 @@ console.log(`Eliminados ${result.deletedCount} post.`);
 
 // crear agentes iniciales
 const inserted = await Publicaciones.insertMany([
-    
+        {
+        "fecha": new Date(),
+        "usuario": "caballerasAPIredonda",
+        "texto": "Ha sido una dura batalla, pero lo hemos conseguido. Hemos creado KNIGHTER!",
+        "imagen": "bici.jpg",
+                
+        },
         {
         "fecha": new Date(),
         "usuario": "CaballeraFrustrada",
@@ -37,13 +43,19 @@ const inserted = await Publicaciones.insertMany([
         },
         {
         "fecha": new Date(),
+        "usuario": "CabelleraNiNiNi",
+        "texto": "¿Quienes son? Somos las caballeras que dicen Ni",
+        "imagen": "cara.jpg"
+                },        
+        {
+        "fecha": new Date(),
         "usuario": "BestiaNegra",
         "texto": "¡Soy la legendaria Bestia Negra de Aaaaargh!",
         "imagen": "hola.jpg",
         },
         {
         "fecha": new Date(),
-        "usuario": "CampesinaCa",
+        "usuario": "CampesinaKnighter",
         "texto": "¿Quién es su señor?¡-No tenemos señor, somos una comunidad anarco-sindicalista.",
         "imagen": "cara.jpg"
         }

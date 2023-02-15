@@ -8,7 +8,7 @@ const followButton = document.getElementsByClassName("followButton");
 const honorButton = document.getElementsByClassName("honor-button")
 let newFollowButton = document.querySelector(".knighter-footer.followButton");
 let id = ""
-let u = "" 
+let u = ""
 const searchInput = document.getElementById("search-input");
 
 
@@ -18,8 +18,8 @@ const searchInput = document.getElementById("search-input");
 //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
 const loggedIn = localStorage.getItem('loggedIn') === 'true';
 if (!loggedIn) {
-  knighterForm.style.display = "none"; 
-  const profileButton = navButtons[1]; 
+  knighterForm.style.display = "none";
+  const profileButton = navButtons[1];
   const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
   profileButton.style.display = "none"
   settingsButton.style.display = "none"
@@ -30,13 +30,14 @@ if (!loggedIn) {
 
 
 //DRAW THE KNIGHTERS FROM THE API
-const url = 'http://127.0.0.1:3000/api/listadeposts' 
+const url = 'http://127.0.0.1:3000/api/listadeposts'
 fetch(url)
 .then(response => response.json())
 .then(data => {
   let postHTML = [];
   for (const i of data.listado) {
     let buttonHTML = '';
+
     if (loggedIn) {
       buttonHTML = `
         <button class="honor-button" value="${i._id}">Honor</button>
@@ -48,7 +49,7 @@ fetch(url)
     <div class="knighter-container">
     <div class="knighter-header">
     <img src="images/logosquare.PNG" alt="avatar">
-    <a class="knighter-name" href="/userprofile.html">${i.usuario}</a>
+    <a class="knighter-name" href="/userprofilesecond.html" data-usernameProfile="${i.usuario}">${i.usuario}</a>
     <br>
     <p class="knighter-date">${i.fecha}</p>
     </div>
@@ -56,10 +57,27 @@ fetch(url)
     <div class="knighter-footer">
     ${buttonHTML}
       </div>
-      </div>` 
-      document.getElementById('knighter-list').innerHTML = postHTML;
-    }})
-    
+      </div>`
+ document.getElementById('knighter-list').innerHTML = postHTML;
+  //intento para guardar el nombre cuando se pincha dentro del LocalStorage
+  //       const knighterLinks = document.querySelectorAll('.knighter-name');
+  //       knighterLinks.forEach(link => {
+  //           link.addEventListener('click', (event) => {
+  //           // Store the username in local storage when the link is clicked
+  //           const usernameProfile = event.currentTarget.dataset.usernameProfile;
+  //         console.log(usernameProfile)
+  //           localStorage.setItem('usernameProfile', usernameProfile);
+
+  // // Add click event listener to each knighter name link
+  //         // Update the value of usernameProfile in the element's data attribute
+  //         event.currentTarget.dataset.usernameProfile = 'new value';
+  //         // // // Update the HTML content of the element to display the new value
+  //         event.currentTarget.textContent = 'new value';
+  //             });
+            // });
+    };
+  })
+
 
 //PUBLISH A KNIGHTER
 //adding an event to the button for publishing a knighter and conecting with the API
@@ -85,7 +103,7 @@ fetch(url)
   <div class="knighter-container">
   <div class="knighter-header">
   <img src="images/logosquare.PNG" alt="avatar">
-  <a class="knighter-name" href="/userprofile.html">${usuario}</a> 
+  <a class="knighter-name" href="/userprofile.html" >${usuario}</a>
   </div>
   <p class="knighter-text">${knighter}</p>
   <button class="honor-button" value = ${data["result"]}>Honor</button>
@@ -98,8 +116,8 @@ fetch(url)
   .catch((error) => {
     console.log(error);
   });
-  
-  
+
+
 })
 
 
@@ -117,11 +135,11 @@ knighterList.addEventListener("click", function(event) {
         followButton.innerHTML = "Following!";
         followButton.disabled = false;
         // localStorage.setItem ("press",true);
-        //HAY QUE GUARDAR UNA VARIABLE DE A QUIEN PERTENECE EL POST 
+        //HAY QUE GUARDAR UNA VARIABLE DE A QUIEN PERTENECE EL POST
         const url= 'http://127.0.0.1:3000/api/seguidores/empezaraseguir?' + new URLSearchParams({usuario:"pepita",user_to_follow:'Gabriela'}) ;
         fetch(url, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' 
+          headers: { 'Content-Type': 'application/json'
         }})
           .then((resp) => resp.json())
           .then((data) => {
@@ -151,10 +169,10 @@ knighterList.addEventListener("click", function(event) {
       const usuario = 'monica'
       const idKnighter = honor.value
       console.log(honor.value)
-      const url= 'http://localhost:3000/api/honors?'  + new URLSearchParams({user:usuario, publishing_id:idKnighter}); 
+      const url= 'http://localhost:3000/api/honors?'  + new URLSearchParams({user:usuario, publishing_id:idKnighter});
   fetch(url, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' 
+        headers: { 'Content-Type': 'application/json'
       },
         body: JSON.stringify({
         // publishing_id: publishingId,
