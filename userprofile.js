@@ -29,12 +29,16 @@ if (!loggedIn) {
 }
 
 //DRAW THE KNIGHTERS FROM THE API
+function refreshKnighters(){
 const url = 'http://127.0.0.1:3000/api/listadeposts' 
 fetch(url)
 .then(response => response.json())
 .then(data => {
+  const usuario = valueUser;
   let postHTML = [];
-  for (const i of data.listado) {
+  let numPost = 0;
+  for (const i of data.listado) {{if (i.usuario === usuario) {
+    numPost++;
     postHTML += `
     <div class="knighter-container">
     <div class="knighter-header">
@@ -49,9 +53,14 @@ fetch(url)
         <span class="honor-count">0</span>
         <button class="followButton">Follow</button>
       </div>
-      </div>` 
+      </div>` }
+      if (numPost === 0) {
+        postHTML = '<p id="titleWall">You haven\'t posted anything yet!<br> Share your thoughts with the realm!</p>';
+      }
       document.getElementById('knighter-list').innerHTML = postHTML;
-    }})
+    }}})
+  }
+  refreshKnighters()
     
 
 //PUBLISH A KNIGHTER
@@ -86,6 +95,8 @@ fetch(url)
   </div>
   `;
   knighterList.prepend(li);
+  document.getElementById('knighter-list').innerHTML = '';
+  refreshKnighters()
   })
   .catch((error) => {
     console.log(error);
