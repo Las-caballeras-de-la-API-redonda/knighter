@@ -38,17 +38,18 @@ main {
 
 .side-column {
   width: 15%;
-  /* The width is set to 20% */
-  height: 70%;
+  height: auto;
   display: flex;
   position: fixed;
-  /* The position is set to fixed */
-  background-color: #ff00ff45;
+  background: rgba(180, 0, 255, 0.4);
+  background: -moz-radial-gradient(center, #B400FF 0%, #14FCFF 100%);
+  background: -webkit-radial-gradient(center, #B400FF 0%, #14FCFF 100%);
+  background: radial-gradient(ellipse at center, #B400FF 0%, #14FCFF 100%);
   font-family: 'Ubuntu', sans-serif;
   align-items: center;
   justify-content: center;
-  margin-bottom: 100px;
-  /* The margin bottom is set to the width of the side column */
+  margin-bottom: 0 auto;
+  border-radius: 20px;
 }
 
 .center-column {
@@ -63,31 +64,21 @@ main {
   background: linear-gradient(to bottom, #8B00CE 0%, #0087A4 0%, #B300C5 100%);
   align-items: center;
   text-align: center;
-  border-radius: 20px;
+  border: 3px ridge #C7C7C7;
+  border-radius: 40px;
   padding: 20px;
   margin-left: 18% auto;
   /* The margin-left is set to the width of the side column */
   margin-right: 22%;
   /* The margin-left is set to the width of the side column */
   flex-direction: column;
-  margin: 100px auto; / adjust top and bottom margin */
-  }
+  margin: 100px auto;
+  /* adjust top and bottom margin */
+}
 
 .header {
   display: flex;
   align-items: center;
-}
-
-
-.user-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.follow-info {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
 }
 
 nav {
@@ -99,10 +90,15 @@ nav {
 
   font-family: 'Ubuntu', sans-serif;
 }
-
+.search-bar {
+  flex: 1;
+  margin-right: 2px;
+  align-self: flex-start
+}
 .fixed-nav {
   position: fixed;
-  background: rgba(179, 0, 197, 0.65); /* fallback */
+  background: rgba(179, 0, 197, 0.65);
+  /* fallback */
   background: -moz-linear-gradient(top, rgba(179, 0, 197, 0.65) 0%, #24FFDC 83%, #0AC7AF 100%);
   background: -webkit-linear-gradient(top, rgba(179, 0, 197, 0.65) 0%, #24FFDC 83%, #0AC7AF 100%);
   background: linear-gradient(to bottom, rgba(179, 0, 197, 0.65) 0%, #24FFDC 83%, #0AC7AF 100%);
@@ -122,6 +118,7 @@ nav {
 .nav-right {
   display: flex;
   align-items: center;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 form {
@@ -131,43 +128,46 @@ form {
 }
 
 label {
-  display: inline-block;
+  display: flex;
   width: 100px;
-  text-align: right;
-  padding-right: 10px;
+  text-align: center;
+  color: rgb(38, 0, 75);
+  font-family: 'Ubuntu', sans-serif;
+  font-size: medium;
+  font-weight: bolder;
 }
 
-form input[type="text"] {
+form input[type="text"], form input[type="email"], form input[type="password"]   {
   padding: 0.5rem;
-  font-size: 16px;
+  font-size: 12px;
   width: 200px;
   height: 30px;
   text-align: center;
-  border: 1px solid #ccc;
+  border: 3px ridge #C7C7C7;
+  border-radius: 40px;
   font-family: 'Ubuntu', sans-serif;
-  border-radius: 4px;
-  margin-right: 1rem;
+
 }
 
 /*TEXT LEVELS*/
 
 h1 {
-  color: rgb(176, 176, 176);
-  text-shadow: 0 0 10px teal;
+  color: rgb(41, 0, 70);
+  font-weight: bold;
   font-family: 'Ubuntu', sans-serif;
   font-size: large;
 }
 
 h2 {
-  color: rgb(176, 176, 176);
-  text-shadow: 0 0 10px teal;
+  color: rgb(41, 0, 70);
+  font-weight: bold;
   font-family: 'Ubuntu', sans-serif;
   font-size: larger;
 }
 
 h3 {
-  color: rgb(176, 176, 176);
-  text-shadow: 0 0 10px teal;
+  color: rgb(41, 0, 70);
+  font-weight: bold;
   font-family: 'Ubuntu', sans-serif;
   font-size: medium;
 }
@@ -180,14 +180,15 @@ h4 {
 }
 
 h5 {
-  color: rgb(176, 176, 176);
-  text-shadow: 0 0 10px teal;
+  color: rgb(41, 0, 70);
+  font-weight: bold;
   font-family: 'Ubuntu', sans-serif;
   font-size: smaller;
 }
 
 p {
-  color: rgb(176, 176, 176);
+  color: rgb(41, 0, 70);
+  font-weight: bold;
   font-family: 'Ubuntu', sans-serif;
   font-size: 12px;
 }
@@ -221,38 +222,26 @@ p {
   align-items: center;
   font-family: 'Ubuntu', sans-serif;
   padding: 20px;
-  margin: 20px;
+  margin: 0 autos;
 }
 
 .new-account-container {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  align-items: center;
   font-family: 'Ubuntu', sans-serif;
   padding: 20px;
   margin: 20px;
 }
 
-
-
-
-
-
-
-
 /*BUTTONS*/
 
-/*.follow-button {
-  display: none;
-}
-
-/* Only show the follow button when logged in and watching a profile that is not yours
-.logged-in .follow-button {
-  display: block;
-}
- */
-
-button, .btn,.following,
+button,
+.btn,
+.submit
+.following,
 .follow-button,
 .followers {
   padding: 0.5rem 1rem;
@@ -263,100 +252,28 @@ button, .btn,.following,
   font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
   font-size: 12pt;
+  width: auto;
   color: #ffffff;
-  margin: 0 auto;
-  border: none;
-  border: 5px outset #00F6F7;
+  margin: 10px auto;
+  font-weight: bold;
+  border: 3px ridge #FFBC33;
   border-radius: 20px;
   cursor: pointer;
 }
 
-.settings-btn {
-  background-color: #9e0089;
-  font-family: 'Ubuntu', sans-serif;
+.settings-btn,.profile-button, .nav-button, .follow-knighter-button {
+  padding: 10px 20px;
+  margin: 10px auto;
+  background: #B400FF;
+  background: -moz-radial-gradient(center, #B400FF 0%, #A000A4 70%, #4D0096 100%);
+  background: -webkit-radial-gradient(center, #B400FF 0%, #A000A4 70%, #4D0096 100%);
+  background: radial-gradient(ellipse at center, #B400FF 0%, #A000A4 70%, #4D0096 100%);
   color: #fff;
-}
-
-.submit-btn {
-  background-color: #9e0089;
   font-family: 'Ubuntu', sans-serif;
-  width: 200px;
-  height: 50px;
-  color: #fff;
-}
-
-.btn {
-  background-color: purple;
-  color: white;
+  font-weight: bold;
+  border: 3px ridge #FFBC33;
   border-radius: 20px;
-  padding: 10px 20px;
-
-  margin: 20px;
-  font-size: 14pt;
-  text-align: center;
   cursor: pointer;
-}
-
-.following,
-.follow-button,
-.followers {
-  background-color: teal;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  width: 130px;
-  margin-left: 25px;
-  margin-bottom: 10px;
-
-}
-
-.nav-button {
-  padding: 10px 20px;
-  margin-left: 10px;
-  background-color: #600064;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-
-
-.search-bar {
-  flex: 1;
-  margin-right: 2px;
-  align-self: flex-start
-}
-
-.profile-button {
-  height: 40px;
-  width: 40px;
-  background-color: #ccc;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icon-button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.follow-knighter-button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.fa-shield-heart {
-  color: rgb(159, 0, 221);
-  font-size: 2.5em;
 }
 
 /*IMAGES*/
@@ -382,16 +299,17 @@ button, .btn,.following,
 .footer-logo {
   height: 50px;
   width: auto;
-  border-radius: 50%;
+  border: 5px ridge #FFBC33;
+border-radius: 40px;
+
 }
 
 .profile-picture {
   width: 80px;
   height: 80px;
   border-radius: 25px;
-  margin-right: 15px;
+ margin: 10px auto;
 }
-
 
 /*RESPONSIVE*/
 
