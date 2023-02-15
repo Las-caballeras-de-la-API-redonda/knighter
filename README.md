@@ -1,44 +1,48 @@
 # KNIGHTER:
 
 ## Table of Contents
-1. [Info General](#general-info)
-2. [Instalación](#instalacion)
+1. [Info General](#info-general)
+2. [Instalación](#instalación)
 3. [Backend](#backend)
-4. [Frontend](#collaboration)
-5. [Colaboraciones](#faqs)
+4. [Autoras](#autoras)
 
 
-## General Info
+
+## Info General 
 ***
-Este proyecto se trata del trabajo final del Bootcamp FullStack "Women in Tech" de Govo impartido por KeepCoding. Se trata de un clon de twitter que permite a los usuarios registrarse, hacer login, publicar posts, dar likes, seguir a otros usuarios, hacer log out o borrar su cuenta. EL backend se ha realizado con mongoose y node.js, y el frontend con javscript, css y html. Se ha utlicado postman para comprobar la conexión.
+Este proyecto se trata del trabajo final del Bootcamp FullStack "Women in Tech" de Govo impartido por KeepCoding. 
+- CARACTERÍSTICAS: Se trata de un clon de twitter que permite a los usuarios registrarse, hacer login, publicar posts, dar likes, seguir a otros usuarios, hacer log out o borrar su cuenta. 
+
+- TECNOLOGÍAS UTILIZADAS: 
+El backend se ha realizado con mongoDB y node.js, y el frontend con javscript, css y html. Se ha utlizado postman para comprobar la correcta conexión.
+
 
 Capturas de pantalla:
 
 Pantalla Principal            |  Pantalla Login             
 :-------------------------:|:-------------------------:|
 ![Image text](/images/pantallaprincipal.png)|![Image text](/images/pantallaLogin.png)
-Pagina Principal Logueada             |  Pantalla Settings |
-![Image text](/images/pantallaprincipalLogueada.png)|![Image text](/images/pantallaSettings.png)
+Pagina Principal Logueada             |  Pantalla de perfil  |
+![Image text](/images/pantallaprincipalLogueada.png)|![Image text](/images/pantallaPerfil.png)
+Pagina crear cuenta         |  Pantalla Settings |
+![Image text](/images/crearcuenta.png)|![Image text](/images/pantallaSettings.png)
 
 
-##  Instalación
+## Instalación 
 ***
-La aplicacion esta disponible en 
-http://127.0.0.1:3000
+Para ejecutar este proyecto en tu propia máquina, sigue estos pasos:
 
-*****Motor de base de datos mongo db
-npm install mongoose
-
-***** Iniciar app 
-node app.js
-
-****Inicializar los datos
-node init-db.js
-
-
+1. Clona este repositorio en tu máquina local.
+2. Abre una terminal y navega hasta el directorio del proyecto.
+3. Ejecuta el comando npm install para instalar las dependencias del proyecto.
+4. Para inicializar la app -> node app.js 
+5. Si desea inicializar los datos -> node init-db.js
+6. Abre tu navegador web y navega a http://127.0.0.1:3000 para ver la aplicación en acción.
 
 ## Backend
 ***
+FUNCIONAMIENTO DEL BACKEND:
+
 La aplicacion esta disponible en 
 http://127.0.0.1:3000
 
@@ -199,14 +203,11 @@ Return:
 200 Si se borra el usuario
 404 Si no se encuentra el usuario a borrar
 
-## Frontend
-***
-Utilidades:
 
 
-## Colaboraciones
+## Autoras
 ***
-Este trabajo ha sido realizado por: 
+Este proyecto ha sido realizado por: 
 
 - Claudia Cano Jacobo
 
