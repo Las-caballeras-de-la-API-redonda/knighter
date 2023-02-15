@@ -1,3 +1,28 @@
+# KNIGHTER:
+
+## Table of Contents
+1. [Info General](#general-info)
+2. [Instalación](#instalacion)
+3. [Backend](#backend)
+4. [Frontend](#collaboration)
+5. [Colaboraciones](#faqs)
+
+
+## General Info
+***
+Este proyecto se trata del trabajo final del Bootcamp FullStack "Women in Tech" de Govo impartido por KeepCoding. Se trata de un clon de twitter que permite a los usuarios registrarse, hacer login, publicar posts, dar likes, seguir a otros usuarios, hacer log out o borrar su cuenta. EL backend se ha realizado con mongoose y node.js, y el frontend con javscript, css y html. Se ha utlicado postman para comprobar la conexión.
+
+Capturas de pantalla:
+
+Pantalla Principal            |  Pantalla Login             
+:-------------------------:|:-------------------------:|
+![Image text](/images/pantallaprincipal.png)|![Image text](/images/pantallaLogin.png)
+Pagina Principal Logueada             |  Pantalla Settings |
+![Image text](/images/pantallaprincipalLogueada.png)|![Image text](/images/pantallaSettings.png)
+
+
+##  Instalación
+***
 La aplicacion esta disponible en 
 http://127.0.0.1:3000
 
@@ -9,6 +34,23 @@ node app.js
 
 ****Inicializar los datos
 node init-db.js
+
+
+
+## Backend
+***
+La aplicacion esta disponible en 
+http://127.0.0.1:3000
+
+*****Motor de base de datos mongo db
+npm install mongoose
+
+***** Iniciar app 
+node app.js
+
+****Inicializar los datos
+node init-db.js
+
 
 ***Añadir Post o actualizar
 http://127.0.0.1:3000/api/listadeposts?id=63dd4d0c46ae886582150988&usuario=Gabriela&texto=texto de prueba&imagen=bici.jpg
@@ -156,3 +198,22 @@ Return:
 Return:
 200 Si se borra el usuario
 404 Si no se encuentra el usuario a borrar
+
+## Frontend
+***
+Utilidades:
+
+
+## Colaboraciones
+***
+Este trabajo ha sido realizado por: 
+
+- Claudia Cano Jacobo
+
+- Mónica Morales Llamas
+
+- Amelia Pérez Sarmiento
+
+- Cristhell Ortiz Molina
+
+- Gabriela Carrazana Viñes
