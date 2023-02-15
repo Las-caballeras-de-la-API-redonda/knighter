@@ -1,5 +1,5 @@
 body {
-   background-image: url('images/fondo.jpg');
+  background-image: url('images/fondo.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -69,16 +69,47 @@ button {
   color: #fff;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-p {
+h1 {
   color: rgb(176, 176, 176);
   text-shadow: 0 0 10px teal;
   font-family: 'Ubuntu', sans-serif;
+  font-size: large;
 }
+
+h2 {
+  color: rgb(176, 176, 176);
+  text-shadow: 0 0 10px teal;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: larger;
+}
+
+h3 {
+  color: rgb(176, 176, 176);
+  text-shadow: 0 0 10px teal;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: medium;
+}
+
+h4 {
+  color: rgb(176, 176, 176);
+  text-shadow: 0 0 10px teal;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: small;
+}
+
+h5 {
+  color: rgb(176, 176, 176);
+  text-shadow: 0 0 10px teal;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: smaller;
+}
+
+p {
+  color: rgb(176, 176, 176);
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 12px;
+}
+
 .following,
 .follow-button,
 .followers {
@@ -88,12 +119,21 @@ p {
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  width:130px;
+  width: 130px;
   margin-left: 25px;
   margin-bottom: 10px;
-  
+
 }
 
+.center-column-container {
+  background-color: teal;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 20px;
+  margin: 20px;
+}
 
 .container {
   background-color: teal;
@@ -104,6 +144,7 @@ p {
   padding: 20px;
   margin: 20px;
 }
+
 .profile-container {
   border-radius: 20px;
   display: flex;
@@ -115,10 +156,9 @@ p {
 }
 
 .new-account-container {
-  background-color: #9e0089;
   border-radius: 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   font-family: 'Ubuntu', sans-serif;
   padding: 20px;
   margin: 20px;
@@ -177,6 +217,13 @@ p {
   top: 0;
 }
 
+.logosuccess {
+  height: 30%;
+  margin-right: 20px;
+  width: auto;
+  border-radius: 20px;
+  top: 0;
+}
 
 .search-bar {
   flex: 1;
@@ -208,7 +255,7 @@ footer {
   align-items: center;
   text-align: center;
   justify-content: space-around;
- 
+
 }
 
 .footer-logo {
@@ -226,31 +273,40 @@ main {
 }
 
 .side-column {
-  width: 20%; /* The width is set to 20% */
+  width: 20%;
+  /* The width is set to 20% */
   height: 80%;
   display: flex;
-  position:fixed; /* The position is set to fixed */
+  position: fixed;
+  /* The position is set to fixed */
   background-color: #ff00ff45;
   font-family: 'Ubuntu', sans-serif;
   align-items: center;
   justify-content: center;
-  margin-bottom: 100px; /* The margin bottom is set to the width of the side column */
+  margin-bottom: 100px;
+  /* The margin bottom is set to the width of the side column */
 }
 
 .center-column {
-  width: 60%; /* The width is set to 3 times wider than the side column */
+  width: 60%;
+  /* The width is set to 3 times wider than the side column */
   height: 100%;
   display: flex;
   font-family: 'Ubuntu', sans-serif;
   background-color: rgb(0, 204, 204);
   align-items: center;
-  justify-content: center;
+  text-align: center;
   border-radius: 20px;
   padding: 20px;
   margin: 20px;
-  margin-top: 100px; /* The margin-left is set to the width of the side column */
-  margin-bottom: 100px; /* The margin bottom is set to the width of the side column */
-  margin-left: 23%; /* The margin-left is set to the width of the side column */
+  margin-top: 100px;
+  /* The margin-left is set to the width of the side column */
+  margin-bottom: 100px;
+  /* The margin bottom is set to the width of the side column */
+  margin-left: 18%;
+  /* The margin-left is set to the width of the side column */
+  margin-right: 22%;
+  /* The margin-left is set to the width of the side column */
 }
 
 .header {

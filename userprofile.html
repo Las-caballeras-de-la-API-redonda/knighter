@@ -13,12 +13,12 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="main.css">
-  <title>Knighter</title>
+  <title>Knighter - User Profile</title>
 </head>
 
 <body>
   <!-- NAVBAR  -->
- 
+
   <header>
     <nav class="fixed-nav">
       <div class="nav-left">
@@ -28,10 +28,10 @@
         </form>
       </div>
       <div class="nav-right">
-        <a button class="nav-button" href="/main.html">Home</a button>
-          <a button class="nav-button" href="/userprofile.html">My profile</a button>
-          <a button class="nav-button" href="/login.html">Login</a button>
-          <a button class="nav-button" href="/settings.html" >Settings</a button>
+        <a button class="nav-button" href="main.html">Home</a button>
+        <a button class="nav-button" href="userprofile.html">My profile</a button>
+        <a button class="nav-button" href="login.html">Login</a button>
+        <a button class="nav-button" href="settings.html">Settings</a button>
       </div>
     </nav>
   </header>
@@ -72,14 +72,14 @@
     <div id="knighter-list">
     </div>
 
-    <!-- EJEMPLO DE KNIGHTER(TWEET) -->
+    <!-- EJEMPLO DE KNIGHTER(TWEET) 
     <div class="knighter-container">
       <div class="knighter-header">
         <img src="images/logosquare.PNG" alt="avatar">
         <a class="knighter-name">Depressed Knight</a>
         <p><br></p>
         <p>@DepressedKnight</p>
-        <!-- <p class="knighter-date">${dateString}</p> -->
+         <p class="knighter-date">${dateString}</p>
       </div>
       <p class="knighter-text">Knighter is the best app in the world!</p>
       <div class="knighter-footer">
@@ -89,9 +89,10 @@
         <span class="honor-count">3</span>
         <button class="followButton">Follow</button>
       </div>
+      </div>-->
 
 
-    </div>
+  </div>
   </div>
   </div>
   <div class="side-column"></div>
@@ -99,8 +100,8 @@
   <br>
   <!-- FOOTER  -->
   <footer>
-      <img class="footer-logo" src="images/teamlogo.PNG" alt="Footer Logo">
-      <p class="copyright-footer">Copyright © Las caballeras de la API redonda. 2023. All rights reserved.</p>
+    <img class="footer-logo" src="images/teamlogo.PNG" alt="Footer Logo">
+    <p class="copyright-footer">Copyright © Las caballeras de la API redonda. 2023. All rights reserved.</p>
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -114,14 +115,14 @@
     //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
     const loggedIn = localStorage.getItem('loggedIn') === 'true';
     if (!loggedIn) {
-      knighterForm.style.display = "none"; 
-      const profileButton = navButtons[1]; 
+      knighterForm.style.display = "none";
+      const profileButton = navButtons[1];
       const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
       profileButton.style.display = "none"
       settingsButton.style.display = "none"
-    }else{
+    } else {
       const loginButton = navButtons[2];
-      loginButton.style.display ="none"
+      loginButton.style.display = "none"
     }
   </script>
 

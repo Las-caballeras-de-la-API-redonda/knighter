@@ -2,70 +2,71 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Knighter - Log in</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Welcome to Knighter</title>
 </head>
 
 <body>
-    
- 
-    <header>
-        <nav class="fixed-nav">
-            <div class="nav-left">
-              <img src="images\logoname.PNG" alt="Logo" class="logo">
-              <form type="search-bar">
-                <input type="text" id="search-input" placeholder="Search">
-              </form>
-            </div>
-            <div class="nav-right">
-              <a button class="nav-button" href="main.html">Home</a button>
-                <a button class="nav-button" href="userprofile.html">My profile</a button>
-                <a button class="nav-button" href="login.html">Login</a button>
-                <a button class="nav-button" href="settings.html" >Settings</a button>
-            </div>
-          </nav>
-    </header>
-  
-    <div>
-        <br>
-    </div>
+
+
+  <header>
+    <nav class="fixed-nav">
+      <div class="nav-left">
+        <img src="images\logoname.PNG" alt="Logo" class="logo">
+        <form type="search-bar">
+          <input type="text" id="search-input" placeholder="Search">
+        </form>
+      </div>
+      <div class="nav-right">
+        <a button class="nav-button" href="main.html">Home</a button>
+        <a button class="nav-button" href="userprofile.html">My profile</a button>
+        <a button class="nav-button" href="login.html">Login</a button>
+        <a button class="nav-button" href="settings.html">Settings</a button>
+      </div>
+    </nav>
+  </header>
+
+  <div>
+    <br>
+  </div>
+
+  <div class="center-column">
     <div class="container">
-        <div class="center-column">
-            <h3>Log into your account</h3>
-            <form id="login-form">
-                <label id="username" for="username">User:</label>
-                <input type="text" id="username-input" name="username" required>
-                <label for="password">Password:</label>
-                <input type="password" id="password-input" name="password" required>
-                <button id="submitButton" type="submit">Submit</button>
-              </form>
-                <h5> <a href="register.html">Don't have an account yet? Sig in!</a></h5>
-        </div>
+      <h3>Log into your account</h3>
+      <form id="login-form">
+        <label id="username" for="username">User:</label>
+        <input type="text" id="username-input" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password-input" name="password" required>
+        <button id="submitButton" type="submit">Submit</button>
+      </form>
+      <h5> <a href="register.html">Don't have an account yet? Sig in!</a></h5>
     </div>
-    <footer>
-        <div style="text-align: center;">
-          <img class="footer-logo" src="images/teamlogo.PNG" alt="Footer Logo">
-          <p class="copyright-footer">Copyright © Las caballeras de la API redonda. 2023. All rights reserved.</p>
-        </div>
-      </footer>
-    <script>
-      const navButtons = document.getElementsByClassName("nav-button")
-      //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
-      const loggedIn = localStorage.getItem('loggedIn') === 'true';
-      if (!loggedIn) {
-        const profileButton = navButtons[1]; 
-        const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
-        profileButton.style.display = "none"
-        settingsButton.style.display = "none"
-      }else{
-        const loginButton = navButtons[2];
-        loginButton.style.display ="none"
-      }
-    </script>
-    <script src="login.js"></script>
-    <div id="app"></div>
+  </div>
+  <footer>
+    <div style="text-align: center;">
+      <img class="footer-logo" src="images/teamlogo.PNG" alt="Footer Logo">
+      <p class="copyright-footer">Copyright © Las caballeras de la API redonda. 2023. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+    const navButtons = document.getElementsByClassName("nav-button")
+    //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
+    const loggedIn = localStorage.getItem('loggedIn') === 'true';
+    if (!loggedIn) {
+      const profileButton = navButtons[1];
+      const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
+      profileButton.style.display = "none"
+      settingsButton.style.display = "none"
+    } else {
+      const loginButton = navButtons[2];
+      loginButton.style.display = "none"
+    }
+  </script>
+  <script src="login.js"></script>
+  <div id="app"></div>
 
 </body>
 

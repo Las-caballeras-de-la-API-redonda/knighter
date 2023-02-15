@@ -2,69 +2,72 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Knighter</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Knighter - Login Successful</title>
 </head>
 
 <body>
-    
-    <div>
-        <script src="login.js"></script>
-        <header>
-          <nav class="fixed-nav">
-            <div class="nav-left">
-              <img src="images\logoname.PNG" alt="Logo" class="logo">
-              <form type="search-bar">
-                <input type="text" id="search-input" placeholder="Search">
-              </form>
-            </div>
-            <div class="nav-right">
-              <a button class="nav-button" href="/main.html">Home</a button>
-                <a button class="nav-button" href="/userprofile.html">My profile</a button>
-                <a button class="nav-button" href="/login.html">Login</a button>
-                <a button class="nav-button" href="/settings.html" >Settings</a button>
-            </div>
-          </nav>
-        </header>
-    </div>
-   
-    <div class="new-account-container">
-        <div class="side-column"></div>
-        <div class="center-column">
-            <form id="signup-form">
-            <H2>You have been successfully registered. You now belong to the Kingdom KNIGHTER</h2>
-              <h2>Please click here to login.</h2> 
-            <br>
-            <a button href="/login.html">CKICK HERE!</a button>
-            <img src="images/lcda5.PNG" alt="">
-            
-            </form>
-        </div>
-        <div class="side-column"></div>
-    </div>
-    <footer>
-        <div style="text-align: center;">
-          <img class="footer-logo" src="images/teamlogo.PNG" alt="Footer Logo">
-          <p class="copyright-footer">Copyright © Las caballeras de la API redonda. 2023. All rights reserved.</p>
-        </div>
-      </footer>
 
-      <script>
-        const navButtons = document.getElementsByClassName("nav-button")
-        //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
-        const loggedIn = localStorage.getItem('loggedIn') === 'true';
-        if (!loggedIn) {
-          const profileButton = navButtons[1]; 
-          const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
-          profileButton.style.display = "none"
-          settingsButton.style.display = "none"
-        }else{
-          const loginButton = navButtons[2];
-          loginButton.style.display ="none"
-        }
-      </script>
- 
-    <div id="app"></div>
+  <div>
+    <script src="login.js"></script>
+    <header>
+      <nav class="fixed-nav">
+        <div class="nav-left">
+          <img src="images\logoname.PNG" alt="Logo" class="logo">
+          <form type="search-bar">
+            <input type="text" id="search-input" placeholder="Search">
+          </form>
+        </div>
+        <div class="nav-right">
+          <a button class="nav-button" href="main.html">Home</a button>
+          <a button class="nav-button" href="userprofile.html">My profile</a button>
+          <a button class="nav-button" href="login.html">Login</a button>
+          <a button class="nav-button" href="settings.html">Settings</a button>
+        </div>
+      </nav>
+    </header>
+  </div>
+
+  <div class="new-account-container">
+    <div class="center-column">
+      <div class="center-column-container">
+        <h4>Delightful news! You have been successfully registered. A most cordial welcome to the esteemed Knighter
+          kingdom, my dear milord or milady. Please do make yourself thoroughly comfortable and click in the button to
+          proceed
+          with your login.</h4>
+        <br><a button class="btn" href="login.html"> Take me to the realm</a button>
+        <br> <img class="logosuccess" src="images/lcda5.PNG">
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div style="text-align: center;">
+      <img class="footer-logo" src="images/teamlogo.PNG" alt="Footer Logo">
+      <p class="copyright-footer">Copyright © Las caballeras de la API redonda. 2023. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+
+
+
+
+  <script>
+    const navButtons = document.getElementsByClassName("nav-button")
+    //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
+    const loggedIn = localStorage.getItem('loggedIn') === 'true';
+    if (!loggedIn) {
+      const profileButton = navButtons[1];
+      const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
+      profileButton.style.display = "none"
+      settingsButton.style.display = "none"
+    } else {
+      const loginButton = navButtons[2];
+      loginButton.style.display = "none"
+    }
+  </script>
+
+  <div id="app"></div>
 </body>
