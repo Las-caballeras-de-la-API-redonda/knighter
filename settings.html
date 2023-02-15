@@ -2,90 +2,96 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Knighter - Log in</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Knighter - Settings</title>
 </head>
 
 <body>
-    
- 
-    <header>
-        <nav class="fixed-nav">
-            <div class="nav-left">
-              <img src="images\logoname.PNG" alt="Logo" class="logo">
-              <form type="search-bar">
-                <input type="text" id="search-input" placeholder="Search">
-              </form>
-            </div>
-            <div class="nav-right">
-              <a button class="nav-button" href="/main.html">Home</a button>
-                <a button class="nav-button" href="/userprofile.html">My profile</a button>
-                <a button class="nav-button" href="/login.html">Login</a button>
-                <a button class="nav-button" href="/settings.html" >Settings</a button>
-            </div>
-          </nav>
-    </header>
-  
-    <div>
-        <br>
+
+
+  <header>
+    <nav class="fixed-nav">
+      <div class="nav-left">
+        <img src="images\logoname.PNG" alt="Logo" class="logo">
+        <form type="search-bar">
+          <input type="text" id="search-input" placeholder="Search">
+        </form>
+      </div>
+      <div class="nav-right">
+        <a button class="nav-button" href="main.html">Home</a button>
+        <a button class="nav-button" href="userprofile.html">My profile</a button>
+        <a button class="nav-button" href="login.html">Login</a button>
+        <a button class="nav-button" href="settings.html">Settings</a button>
+      </div>
+    </nav>
+  </header>
+
+  <div>
+    <br>
+  </div>
+  <div class="container">
+    <div class="center-column">
+      <button onclick="closeSeason()">CLOSE SESSION</button>
+      <br>
+      <button onclick="deleteAcount()">DELETE ACCOUNT</button>
     </div>
-    <div class="container">
-        <div class="side-column"></div>
-        <div class="center-column">
-                <button onclick="closeSeason()">CLOSE SEASON</button>
-                <br>
-                <button onclick="deleteAcount()">DELETE ACCOUNT</button>
-        </div>
+  </div>
+  <footer>
+    <div style="text-align: center;">
+      <img class="footer-logo" src="images/teamlogo.PNG" alt="Footer Logo">
+      <p class="copyright-footer">Copyright © Las caballeras de la API redonda. 2023. All rights reserved.</p>
     </div>
-    <footer>
-        <div style="text-align: center;">
-          <img class="footer-logo" src="images/teamlogo.PNG" alt="Footer Logo">
-          <p class="copyright-footer">Copyright © Las caballeras de la API redonda. 2023. All rights reserved.</p>
-        </div>
-      </footer>
+  </footer>
 
-      <script>
-   const navButtons = document.getElementsByClassName("nav-button")
-        //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
-        const loggedIn = localStorage.getItem('loggedIn') === 'true';
-        if (!loggedIn) {
-          const profileButton = navButtons[1]; 
-          const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
-          profileButton.style.display = "none"
-          settingsButton.style.display = "none"
-        }else{
-          const loginButton = navButtons[2];
-          loginButton.style.display ="none"
-        }
-		function deleteAcount() {
-            if (confirm('Are you sure that you want to delete your account?')){
-            localStorage.removeItem("loggedIn");
-            localStorage.removeItem("name");
-            localStorage.removeItem("email");
-            localStorage.removeItem("user");
-            window.location.href = "/main.html";
-        }else{
-            alert("You made a good decision! Enjoy Knighter!")
-        }}
 
-		function closeSeason() {
-            if (confirm('Are you sure that you want to log out?')){
-            localStorage.removeItem("loggedIn");
-            localStorage.removeItem("username");
-            localStorage.removeItem("email");
-            localStorage.removeItem("id");
 
-            window.location.href = "/login.html";}
-            else{
-                alert("You made a good decision! Enjoy Knighter!")
-            }
-			
-		}
-	</script>
 
-    <div id="app"></div>
+
+
+  <script>
+    const navButtons = document.getElementsByClassName("nav-button")
+    //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
+    const loggedIn = localStorage.getItem('loggedIn') === 'true';
+    if (!loggedIn) {
+      const profileButton = navButtons[1];
+      const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
+      profileButton.style.display = "none"
+      settingsButton.style.display = "none"
+    } else {
+      const loginButton = navButtons[2];
+      loginButton.style.display = "none"
+    }
+    function deleteAcount() {
+      if (confirm('Are you sure that you want to delete your account?')) {
+        localStorage.removeItem("loggedIn");
+        localStorage.removeItem("name");
+        localStorage.removeItem("email");
+        localStorage.removeItem("user");
+        window.location.href = "/main.html";
+      } else {
+        alert("You made a good decision! Enjoy Knighter!")
+      }
+    }
+
+    function closeSeason() {
+      if (confirm('Are you sure that you want to log out?')) {
+        localStorage.removeItem("loggedIn");
+        localStorage.removeItem("username");
+        localStorage.removeItem("email");
+        localStorage.removeItem("id");
+
+        window.location.href = "/login.html";
+      }
+      else {
+        alert("You made a good decision! Enjoy Knighter!")
+      }
+
+    }
+  </script>
+
+  <div id="app"></div>
 
 
 </body>

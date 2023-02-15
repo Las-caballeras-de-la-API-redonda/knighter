@@ -1,72 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="main.css">
-    <title>Knighter</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="main.css">
+  <title>Knighter</title>
 </head>
-  
-<body>   
-    <!-- NAVBAR  -->
 
-  
-    <header>
-      <nav class="fixed-nav">
-        <div class="nav-left">
-          <img src="images\logoname.PNG" alt="Logo" class="logo">
-          <form type="search-bar">
-            <input type="text" id="search-input" placeholder="Search">
-          </form>
-        </div>
-        <div class="nav-right">
-          <a button class="nav-button" href="main.html">Home</a button>
-            <a button class="nav-button" href="userprofile.html">My profile</a button>
-            <a button class="nav-button" href="login.html">Login</a button>
-            <a button  class="nav-button" href="settings.html" >Settings</a button>
-        </div>
-      </nav>
-    </header>
-  
-    
-    <!-- Publish new twitter (knighter) - Only if the user is logged in  -->
- 
+<body>
+  <!-- NAVBAR  -->
 
-      <div class="center-column">
-        <div id="knighter-form">
-          <img src="images/logosquare.PNG" alt="avatar">
-          <textarea id="knighter-input" placeholder="What are the fresh news from the kingdom?" name="texto"></textarea>
-          <br>
-          <button id="knighter-button">Knighther</button>
-        </div>
-        <!-- wall of most recent knighters published  -->
-        <div id="knightersWall">
-          <h2 id="titleWall">KNIGHTER WALL</h2>
-          <!-- KNIGHTERS FROM THE API AND NEWS -->
-  
-          <div id="knighter-list"> 
-          </div>
-        
-      </div>
-      </div>
-<br>
-<br>
 
-    <!-- FOOTER  -->
-      
-    
-    <footer>
-      <div style="text-align: center;">
-        <img class="footer-logo" src="images/teamlogo.PNG" alt="Footer Logo">
-        <p class="copyright-footer">Copyright © Las caballeras de la API redonda. 2023. All rights reserved.</p>
+  <header>
+    <nav class="fixed-nav">
+      <div class="nav-left">
+        <img src="images\logoname.PNG" alt="Logo" class="logo">
+        <form type="search-bar">
+          <input type="text" id="search-input" placeholder="Search">
+        </form>
       </div>
-    </footer>
-      
-      <script src="main.js"></script>
-    <div id="app"></div>
+      <div class="nav-right">
+        <a button class="nav-button" href="main.html">Home</a button>
+        <a button class="nav-button" href="userprofile.html">My profile</a button>
+        <a button class="nav-button" href="login.html">Login</a button>
+        <a button class="nav-button" href="settings.html">Settings</a button>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- Publish new twitter (knighter) - Only if the user is logged in  -->
+
+
+  <div class="center-column">
+    <div id="knighter-form">
+      <img src="images/logosquare.PNG" alt="avatar">
+      <textarea id="knighter-input" placeholder="What are the fresh news from the kingdom?" name="texto"></textarea>
+      <br>
+      <button id="knighter-button">Knighther</button>
+    </div>
+    <!-- wall of most recent knighters published  -->
+    <div id="knightersWall">
+      <h2 id="titleWall">KNIGHTER WALL</h2>
+      <!-- KNIGHTERS FROM THE API AND NEWS -->
+
+      <div id="knighter-list">
+      </div>
+
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <!-- FOOTER  -->
+
+
+  <footer>
+    <div style="text-align: center;">
+      <img class="footer-logo" src="images/teamlogo.PNG" alt="Footer Logo">
+      <p class="copyright-footer">Copyright © Las caballeras de la API redonda. 2023. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <div id="app"></div>
 </body>
 
 </html>

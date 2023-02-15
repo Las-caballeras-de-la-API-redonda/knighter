@@ -12,12 +12,12 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="main.css">
-  <title>Knighter</title>
+  <title>Knighter - User Profile</title>
 </head>
 
 <body>
   <!-- NAVBAR  -->
- 
+
   <header>
     <nav class="fixed-nav">
       <div class="nav-left">
@@ -27,10 +27,10 @@
         </form>
       </div>
       <div class="nav-right">
-        <a button class="nav-button" href="/main.html">Home</a button>
-          <a button class="nav-button" href="/userprofile.html">My profile</a button>
-          <a button class="nav-button" href="/login.html">Login</a button>
-          <a button class="nav-button" href="/settings.html" >Settings</a button>
+        <a button class="nav-button" href="main.html">Home</a button>
+        <a button class="nav-button" href="userprofile.html">My profile</a button>
+        <a button class="nav-button" href="login.html">Login</a button>
+        <a button class="nav-button" href="settings.html">Settings</a button>
       </div>
     </nav>
   </header>
@@ -87,7 +87,7 @@
       </div>-->
 
 
-    </div>
+  </div>
   </div>
   </div>
   <div class="side-column"></div>
@@ -95,8 +95,8 @@
   <br>
   <!-- FOOTER  -->
   <footer>
-      <img class="footer-logo" src="images/teamlogo.PNG" alt="Footer Logo">
-      <p class="copyright-footer">Copyright © Las caballeras de la API redonda. 2023. All rights reserved.</p>
+    <img class="footer-logo" src="images/teamlogo.PNG" alt="Footer Logo">
+    <p class="copyright-footer">Copyright © Las caballeras de la API redonda. 2023. All rights reserved.</p>
   </footer>
 
   <script src="main.js"></script>
@@ -107,14 +107,14 @@
     //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
     const loggedIn = localStorage.getItem('loggedIn') === 'true';
     if (!loggedIn) {
-      knighterForm.style.display = "none"; 
-      const profileButton = navButtons[1]; 
+      knighterForm.style.display = "none";
+      const profileButton = navButtons[1];
       const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
       profileButton.style.display = "none"
       settingsButton.style.display = "none"
-    }else{
+    } else {
       const loginButton = navButtons[2];
-      loginButton.style.display ="none"
+      loginButton.style.display = "none"
     }
   </script>
 

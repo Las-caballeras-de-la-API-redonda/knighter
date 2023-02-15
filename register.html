@@ -2,76 +2,76 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Knighter</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Register into Knighter</title>
 </head>
 
 <body>
-    
-    <div>
-        <script src="login.js"></script>
-        <header>
-          <nav class="fixed-nav">
-            <div class="nav-left">
-              <img src="images\logoname.PNG" alt="Logo" class="logo">
-              <form type="search-bar">
-                <input type="text" id="search-input" placeholder="Search">
-              </form>
-            </div>
-            <div class="nav-right">
-              <a button class="nav-button" href="/main.html">Home</a button>
-                <a button class="nav-button" href="/userprofile.html">My profile</a button>
-                <a button class="nav-button" href="/login.html">Login</a button>
-                <a button class="nav-button" href="/settings.html" >Settings</a button>
-            </div>
-          </nav>
-        </header>
-      
-        <h2>Knigther</h2>
-    </div>
-    <div class="new-account-container">
-        <div class="side-column"></div>
-        <div class="center-column">
-            <h3>Create your account! </h3>
-            <form id="signup-form">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required placeholder="Username...">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required placeholder="Email address...">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required placeholder="Name...">
-                <label for="surname">Surname:</label>
-                <input type="text" id="surname" name="surname" required placeholder="Surname...">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required placeholder="Password...">
-                <button id="submit" type="submit">Sign in</button>
-                
-            </form>
+
+  <div>
+    <script src="login.js"></script>
+    <header>
+      <nav class="fixed-nav">
+        <div class="nav-left">
+          <img src="images\logoname.PNG" alt="Logo" class="logo">
+          <form type="search-bar">
+            <input type="text" id="search-input" placeholder="Search">
+          </form>
         </div>
-        <div class="side-column"></div>
-    </div>
-    <footer>
-        <div style="text-align: center;">
-          <img class="footer-logo" src="images/teamlogo.PNG" alt="Footer Logo">
-          <p class="copyright-footer">Copyright © Las caballeras de la API redonda. 2023. All rights reserved.</p>
+        <div class="nav-right">
+          <a button class="nav-button" href="main.html">Home</a button>
+          <a button class="nav-button" href="userprofile.html">My profile</a button>
+          <a button class="nav-button" href="login.html">Login</a button>
+          <a button class="nav-button" href="settings.html">Settings</a button>
         </div>
-      </footer>
-      <script>
-        const navButtons = document.getElementsByClassName("nav-button")
-        //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
-        const loggedIn = localStorage.getItem('loggedIn') === 'true';
-        if (!loggedIn) {
-          const profileButton = navButtons[1]; 
-          const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
-          profileButton.style.display = "none"
-          settingsButton.style.display = "none"
-        }else{
-          const loginButton = navButtons[2];
-          loginButton.style.display ="none"
-        }
-      </script>
-    <script src="register.js"></script>
-    <div id="app"></div>
+      </nav>
+    </header>
+
+    <h2>Knigther</h2>
+  </div>
+  <div class="new-account-container">
+    <div class="side-column"></div>
+    <div class="center-column">
+      <h3>Create your account! </h3>
+      <form id="signup-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required placeholder="Username...">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="Email address...">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required placeholder="Name...">
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" name="surname" required placeholder="Surname...">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required placeholder="Password...">
+        <button id="submit" type="submit">Sign in</button>
+
+      </form>
+    </div>
+    <div class="side-column"></div>
+  </div>
+  <footer>
+    <div style="text-align: center;">
+      <img class="footer-logo" src="images/teamlogo.PNG" alt="Footer Logo">
+      <p class="copyright-footer">Copyright © Las caballeras de la API redonda. 2023. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+    const navButtons = document.getElementsByClassName("nav-button")
+    //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
+    const loggedIn = localStorage.getItem('loggedIn') === 'true';
+    if (!loggedIn) {
+      const profileButton = navButtons[1];
+      const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
+      profileButton.style.display = "none"
+      settingsButton.style.display = "none"
+    } else {
+      const loginButton = navButtons[2];
+      loginButton.style.display = "none"
+    }
+  </script>
+  <script src="register.js"></script>
+  <div id="app"></div>
 </body>
