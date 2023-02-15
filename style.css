@@ -173,10 +173,10 @@ h3 {
 }
 
 h4 {
-  color: rgb(176, 176, 176);
-  text-shadow: 0 0 10px teal;
+  color: rgb(41, 0, 70);
+  font-weight: bold;
   font-family: 'Ubuntu', sans-serif;
-  font-size: small;
+  font-size: medium;
 }
 
 h5 {
@@ -261,7 +261,7 @@ button,
   cursor: pointer;
 }
 
-.settings-btn,.profile-button, .nav-button, .follow-knighter-button {
+.settings-btn,.profile-button, .nav-button, .follow-knighter-button, .followButton, .honor-button  {
   padding: 10px 20px;
   margin: 10px auto;
   background: #B400FF;
@@ -311,6 +311,13 @@ border-radius: 40px;
  margin: 10px auto;
 }
 
+.knighter-header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
 /*RESPONSIVE*/
 
 @media (max-width: 600px) {
@@ -326,3 +333,106 @@ border-radius: 40px;
     height: 30px;
   }
 }
+
+/*COMES FROM MAIN CSS*/
+#knighter-form {
+  width: 80%;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 1px solid #e6ecf0;
+  border-radius: 10px;
+  display: flex;
+  margin: 30px;
+}
+
+#knighter-form img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+#knighter-input {
+  height: 60px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  resize: none;
+  margin-right: 30px;
+  flex-grow: 1;
+}
+
+#knighter-button {
+  background-color: purple;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 20px;
+  font-size: 14pt;
+  text-align: center;
+  cursor: pointer;
+
+}
+
+/* title wall*/
+
+#titleWall {
+  text-align: center;
+  padding: 10px;
+  text-shadow: 1px 1px #cca52c, 2px 2px #cca52c, 3px 3px #cca52c, 4px 4px #cca52c, 5px 5px #cca52c, 6px 6px #cca52c;
+  color: #ffd75d;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 37px;
+  text-align: center;
+}
+
+/* KNIGHTERS PUBLISHED*/
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+}
+
+
+.knighter-container {
+  padding: 20px;
+  width: 90%;
+  background: #FFFFFF;
+  background: -moz-radial-gradient(center, #FFFFFF 0%, #CADEDF 81%, #A7A7A7 100%);
+  background: -webkit-radial-gradient(center, #FFFFFF 0%, #CADEDF 81%, #A7A7A7 100%);
+  background: radial-gradient(ellipse at center, #FFFFFF 0%, #CADEDF 81%, #A7A7A7 100%);
+  border: 2px ridge #FFBC33;
+  border-radius: 20px;
+  color: black;
+  margin: 10px auto;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+}
+
+.knighter-header {
+  display: flex;
+  text-align: left;
+  justify-content: first baseline;
+  margin: 10px auto;
+}
+
+
+.knighter-name {
+  font-size: 25px;
+  font-weight:bold;
+  margin:10px auto;
+  text-align: left;
+  padding: 5px;
+}
+
+
+
