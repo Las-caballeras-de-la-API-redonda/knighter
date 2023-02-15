@@ -18,13 +18,15 @@ const searchInput = document.getElementById("search-input");
 //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
 const loggedIn = localStorage.getItem('loggedIn') === 'true';
 if (!loggedIn) {
-  knighterForm.style.display = "none"; 
-  const profileButton = navButtons[1]; 
+  knighterForm.style.display = "none";
+  const profileButton = navButtons[1];
   const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
   profileButton.style.display = "none"
   settingsButton.style.display = "none"
+} else {
+  const loginButton = navButtons[2];
+  loginButton.style.display = "none"
 }
-
 
 //DRAW THE KNIGHTERS FROM THE API
 const url = 'http://127.0.0.1:3000/api/listadeposts' 
@@ -55,7 +57,8 @@ fetch(url)
 //PUBLISH A KNIGHTER
 //adding an event to the button for publishing a knighter and conecting with the API
   knighterButton.addEventListener("click", function(){
-    const usuario = "Gabriela"; //IMPORTANTE!!!!cambiar el usuario por el usuario logueado
+    var valueUser = localStorage.getItem('username');
+    const usuario = valueUser; 
     const knighter = knighterInput.value ;
       console.log(knighter)
       const url = 'http://127.0.0.1:3000/api/listadeposts?' + new URLSearchParams({usuario:usuario,texto:knighter,imagen:"img"});
@@ -74,7 +77,7 @@ fetch(url)
   <div class="knighter-container">
   <div class="knighter-header">
   <img src="images/logosquare.PNG" alt="avatar">
-  <a class="knighter-name" href="/userprofile.html">${usuario}</a> //hay que poner el usuario
+  <a class="knighter-name" href="/userprofile.html">${usuario}</a> 
   </div>
   <p class="knighter-text">${knighter}</p>
   <button class="honor-button" value = ${data["result"]}>Honor</button>

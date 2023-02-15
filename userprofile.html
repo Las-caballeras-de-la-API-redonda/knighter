@@ -4,15 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets\fontawesome-free-6.3.0-web\css\all.css">
-  <link rel="stylesheet" href="assets\fontawesome-free-6.3.0-web\scss\fontawesome.scss">
-  <link rel="stylesheet" href="assets\fontawesome-free-6.3.0-web\css\fontawesome.min.css">
-  <link rel="stylesheet" href="assets\fontawesome-free-6.3.0-web\css\solid.css">
-  <link rel="stylesheet" href="assets\fontawesome-free-6.3.0-web\css\solid.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" type="image/x-icon" href="bigfavicon.ico">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="main.css">
   <title>Knighter - User Profile</title>
 </head>
 
@@ -41,23 +35,23 @@
 
   <div class="side-column">
     <div class="profile-container">
-      <img src="images\lifeofbrian.jpg" alt="Profile Picture" class="profile-picture">
-      <div class="user-info">
-        <h1 class="username"></h1>
-        <p class="username"></p>
-      </div>
-      <div class="follow-info">
-        <button class="following">Following</button>
-        <button class="followers">Followers</button>
-        <button class="follow-button">Follow</button>
-      </div>
+      <img src="images\dfs.png" alt="Profile Picture" class="profile-picture">
+      <h1 class="username"></h1>
+      <p class="username2">@</p>
+      <button class="following">See followed</button>
+      <button class="followers">See followers</button>
+      <button class="follow-button">Follow</button>
     </div>
-<script>
-    var valueUser = localStorage.getItem('username');
-    var publishName = document.querySelector('.username');
-    publishName.innerHTML= valueUser
-</script>
   </div>
+
+  <script>// draw the username
+    var valueUser = localStorage.getItem('username');
+    var elementUser = document.querySelector('.username');
+    var elementUser2 = document.querySelector('.username2')
+    var formattedUser2 = "@" + valueUser
+    elementUser.innerHTML = valueUser
+    elementUser2.innerHTML = formattedUser2
+  </script>
 
 
   <div class="center-column">
@@ -72,24 +66,6 @@
     <div id="knighter-list">
     </div>
 
-    <!-- EJEMPLO DE KNIGHTER(TWEET) 
-    <div class="knighter-container">
-      <div class="knighter-header">
-        <img src="images/logosquare.PNG" alt="avatar">
-        <a class="knighter-name">Depressed Knight</a>
-        <p><br></p>
-        <p>@DepressedKnight</p>
-         <p class="knighter-date">${dateString}</p>
-      </div>
-      <p class="knighter-text">Knighter is the best app in the world!</p>
-      <div class="knighter-footer">
-        <button class="icon-button" value="0">
-          <i class="fas fa-shield-heart"></i>
-        </button>
-        <span class="honor-count">3</span>
-        <button class="followButton">Follow</button>
-      </div>
-      </div>-->
 
 
   </div>
@@ -118,21 +94,7 @@
   <script src="userprofile.js"></script>
   <div id="app"></div>
 
-  <script>
-    const navButtons = document.getElementsByClassName("nav-button")
-    //OCULTAR PARTES CUANDO ESTEMOS LOGUEADOS
-    const loggedIn = localStorage.getItem('loggedIn') === 'true';
-    if (!loggedIn) {
-      knighterForm.style.display = "none";
-      const profileButton = navButtons[1];
-      const settingsButton = navButtons[3];// selecciona el segundo botón de la lista
-      profileButton.style.display = "none"
-      settingsButton.style.display = "none"
-    } else {
-      const loginButton = navButtons[2];
-      loginButton.style.display = "none"
-    }
-  </script>
 
 </body>
+
 </html>
